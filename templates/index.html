@@ -1,0 +1,1101 @@
+{% extends 'base.html' %} 
+{% load static %}
+    <!-- slider starts -->
+    <!-- {% block css %} {% endblock css %} -->
+    {% block body %}
+
+        <!-- slider starts -->
+        
+        <div class="hide">
+            <p class="sidenabvar_hidden" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="padding-left:10px;padding-top: 5px;position:fixed;
+            left:0;color:#0c5b51; background:  #f6ca91;width:100%;z-index: 1;"> 
+            <i class="fa fa-bars"></i> All
+            </p>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color: rgba(246, 202, 145, 1.71); width:250px;">
+              <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasExampleLabel"> <div class="profile d-flex align-items-center mb-4">
+                      <img src="/static/assets/img/new-temp/logo.png"
+                          alt="" style="width: 50px;" class="rounded me-3">
+                      <h5 class="text-white mb-0">Hello, Arun sharma</h5>
+                  </div>
+              </h5>
+                  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <div id="sidebar"> 
+                     
+                      <ul class="list-unstyled ps-0 side-nav-menu">
+                          <li>
+                              <a href="#" class="child-component" onclick="showChildCategory()">
+                                  Home 1
+                                  <i class="fal fa-chevron-down"></i>
+                              </a>
+                              <ul class="show-sub-category ps-4">
+                                  <li>
+                                      <a href="#" onclick="showSubChildCategory()">
+                                          Home 2
+                                          <i class="fal fa-chevron-down"></i>
+                                      </a>
+                                      <ul class="show-sub-sub-category ps-3">
+                                          <li>
+                                              <a href="">home 3</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li><a href="">home 3</a></li>
+                                  <li><a href="">home 4</a></li>
+                                  <li><a href="">home 5</a></li>
+                              </ul>
+                          </li>
+              
+                          <li>
+                              <a href="#">
+                                  Home & Décor
+                                  <i class="fal fa-chevron-down"></i>
+                              </a>
+                          </li>
+              
+                          <li>
+                              <a href="#" onclick="showChildCategory()">
+                                  Kitchen & Dinning
+                                  <i class="fal fa-chevron-down"></i>
+                              </a>
+                              <ul class="show-sub-category">
+                                  <li>
+                                      <a href="#" onclick="showSubChildCategory()">
+                                          Home 2
+                                          <i class="fal fa-chevron-down"></i>
+                                      </a>
+                                      <ul class="show-sub-sub-category">
+                                          <li>
+                                              <a href="">home 3</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                                  <li><a href="">home 3</a></li>
+                                  <li><a href="">home 4</a></li>
+                                  <li><a href="">home 5</a></li>
+                              </ul>
+                          </li>
+              
+                          <li>
+                              <a href="#">
+                                  Storage & Organizer
+                                  <i class="fal fa-chevron-down"></i>
+                              </a>
+                          </li>
+              
+                          <li>
+                              <a href="#">
+                                  Bath
+                                  <i class="fal fa-chevron-down"></i>
+                              </a>
+                          </li>
+              
+                          <li>
+                              <a href="#">
+                                  Furniture
+                                  <i class="fal fa-chevron-down"></i>
+                              </a>Product Details
+                              
+                          </li>
+              
+                          <li>
+                              <a href="#">
+                                  Lighting
+                                  <i class="fal fa-chevron-down"></i>
+                              </a>
+                          </li>
+              
+                          <li>
+                              <a href="#">
+                                  Clothing
+                                  <i class="fal fa-chevron-down"></i>
+                              </a>
+                          </li>
+              
+                          <li>
+                              <a href="#">
+                                  Sale
+                                  <i class="fal fa-chevron-down"></i>
+                              </a>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+   
+    <section class="">
+        <div class="container-fluid">
+            <div class="row mt-3">
+                <div class="col-md-12 col-12 ">
+                    <div class="position-relative">
+                        <div class="carousel-slick-slider">
+                            <div class="">
+                                <a href="#"><img
+                                        src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/12/68115873-a79e-47ad-b196-e2b41bc4ce8f1634007884717-Sale-is-Live-Kiara-White.jpg"
+                                        alt="" class="img-fluid w-100"></a>
+                            </div>
+                            <div class="">
+                                <a href="#"><img
+                                        src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/9/430fbc0d-623f-4c54-84c8-bde6505331191633797988468-HU_DK.jpg"
+                                        alt="" class="img-fluid w-100"></a>
+                            </div>
+                            <div class="">
+                                <a href="#"><img
+                                        src="https://assets.myntassets.com/f_webp,w_980,c_limit,fl_progressive,dpr_2.0/assets/images/2021/10/11/4f3a7fe4-2244-4e3b-9dc4-31c7218c1dfb1633952601059-AAY_Desk_Banner.jpg"
+                                        alt="" class="img-fluid w-100"></a>
+                            </div>
+                        </div>
+                        <div style="position: absolute;right: 14px;bottom: 14px;">
+                            <button class="border-0 shadow go-b"><i class="fal fa-chevron-left"></i></button>
+                            <button class="border-0 shadow go-f"><i class="fal fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <section>
+                    <div class="container-fluid px-3">
+                        <div class="d-flex justify-content-between">
+                        <div class="mb-3 d-flex justify-content-between align-items-center">
+                            <h3 class="mb-0">This weekend hot sales</h3>
+                        </div>
+                        
+                        <h1 class="ml6" style="float:right;">
+                            <span class="text-wrapper">
+                                <img src="https://starpng.com/public/uploads/preview/weekend-offer-sale-png-21566900846c4fbzuxmnt.png" class="img-fluid letters" style="width:50px; height:50px;">
+                            </span>
+                          </h1>
+                        </div>
+                        <div class="row product-slick-slider ">
+                            <div class="col-2">
+                                <div class="product shadow-sm rounded">
+                                    <img src="{% static 'assets/img/download.webp' %}" class="img-fluid" style="padding: 2px;" alt="">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="product rounded shadow-sm">
+                                    <img src="{% static 'assets/img/download1.webp' %}" class="img-fluid" style="padding: 2px;" alt="">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="product rounded shadow-sm">
+                                    <img src="{% static 'assets/img/download2.webp' %}" class="img-fluid" style="padding: 2px;" alt="">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="product rounded shadow-sm">
+                                    <img src="{% static 'assets/img/download3.webp' %}" class="img-fluid" style="padding: 2px;" alt="">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="product rounded shadow-sm">
+                                    <img src="{% static 'assets/img/download.webp' %}" class="img-fluid" style="padding: 2px;" alt="">
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="product rounded shadow-sm">
+                                    <img src="{% static 'assets/img/download2.webp' %}" class="img-fluid" style="padding: 2px;" alt="">          
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <!-- slider ends -->
+    <!-- main category -->
+    <section class="shopByCategory parveen">
+        <div class="container-fluid px-3">
+            <div class="d-flex justify-content-between algn-items-center mb-3">
+                <h3 class="mb-0">Shop By Category</h3>
+                <div class="">
+                    <button class="border-0 shadow go-b1"><i class="fal fa-chevron-left"></i></button>
+                    <button class="border-0 shadow go-f1"><i class="fal fa-chevron-right"></i></button>
+                </div>
+            </div>
+            <div class="row category-slick-slider"  >
+                {% for category_data in category_queryset %}
+                <a href="/product_list/{{ category_data.id }}">
+                    <div class="col category-section text-center">
+                        <div class="p-2">
+                            <img src="{{ category_data.short_image.url }}"
+                                alt="" class="w-100 ab image-o-category">
+                            <p class="mb-0">{{ category_data.category_name }}</p>
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+               <!--  <a href="#">
+                    <div class="col category-section text-center">
+                        <div class="p-2">
+                            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/kitchenlab-design-1529347638.jpg"
+                                alt="" class="w-100 ab image-o-category">
+                            <p class="mb-0">Kitchen & Dinning</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="col category-section text-center">
+                        <div class="p-2">
+                            <img src="https://cf.shopee.ph/file/3c17bc0fefb84be20e986afb97246078" alt=""
+                                class="w-100 ab image-o-category">
+                            <p class="mb-0">Storage & Organizer</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="col category-section text-center">
+                        <div class="p-2">
+                            <img src="https://styleblueprint.com/wp-content/uploads/2020/08/SB-Memphis-KitchenUnlimited-StyleBlueprint_Bathrooms-1-1-scaled.jpg"
+                                alt="" class="w-100 ab image-o-category">
+                            <p class="mb-0">Bath</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="col category-section text-center">
+                        <div class="p-2">
+                            <img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/amazon-rivet-furniture-1533048038.jpg"
+                                alt="" class="w-100 ab image-o-category">
+                            <p class="mb-0">Furniture</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="col category-section text-center">
+                        <div class="p-2">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFrFn3o1T07CuSMUECwWqGcaYfhwonS8xLkz_sADXw5hqKyiZco5m2aXnFtmkN-XQpW58&usqp=CAU"
+                                alt="" class="w-100 ab image-o-category">
+                            <p class="mb-0">Lighting</p>
+                        </div>
+                    </div>
+                </a>
+                <a href="#">
+                    <div class="col category-section text-center">
+                        <div class="p-2">
+                            <img src="https://www.coverstory.co.in/media/cms/home/category/work.jpg" alt=""
+                                class="w-100 ab image-o-category">
+                            <p class="mb-0">Clothing</p>
+                        </div>
+                    </div>
+                </a> -->
+                <a href="/category-list/">
+                    <div class="col category-section text-center">
+                        <div class="p-2">
+                            <img src="{% static 'assets/img/new-temp/logo.png' %}" alt="" class="w-100 ab image-o-category bg-white">
+                            <p class="mb-0" href="product_list/">See All</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <!-- main category ends -->
+    <!-- products listing start -->
+    {% for category_product_data in category_product_queryset %}
+    <section>
+        <div class="container-fluid px-3">
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">{{ category_product_data.category.category_name }}</h3>
+                <a class="btn btn-outline-success" href="product_list/{{category_product_data.category.id}}">View all</a>
+            </div>
+            <div class="row product-slick-slider ">
+                {% for product_data in category_product_data.mapped_products.all %}
+                <div class="col-2">
+                    <div class="product-section rounded shadow-xsm">
+                        <a href="product_description/{{product_data.id}}" class="hover-switch">
+                            <img src="{{ product_data.image_1.url }}" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="{{ product_data.image_2.url }}" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <div class="name-o-product p-1 text-truncate">{{ product_data.product_name }}
+                            <a href="">
+                        </div>
+                        </a>
+                        <div class="stars p-1-half-alt">
+                            <a href="#" class="">121</a>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">Rs.{{ product_data.price }}</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">{{ product_data.price }}
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+                
+    </section>
+    {% endfor %}
+    <hr>
+    <!-- products listing ends -->
+    <!-- side by side start -->
+    <section>
+        <div class="container-fluid p-md-5 p-3" style="background-color: #f3debf;">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center">
+                    <a href="#"> <img
+                            src="https://images.ctfassets.net/5de70he6op10/C77i1Yy1cxYXCzcRL3R3w/189b2b3cce10292ba921c5debdc6cec3/RR_home_newarrivals.jpg?w=856&q=80&fm=webp"
+                            alt="" class="w-100 ab mb-4" style="object-fit: cover;" height="400"></a>
+                </div>
+                <div class="col-md-6">
+                    <h3>Deal of the day</h3>
+                    <h1>Cuddly Companions</h1>
+                    <p>Meet your next BFF: Best Faux Fur.</p>
+                    <p>Starting from $110 - $790</p>
+                    <button class="btn btn-outline-success">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- side by side ends -->
+    <hr>
+    <!-- products listing start -->
+<!--     <section>
+        <div class="container-fluid px-3">
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">Kitchen & Dining</h3>
+                <button class="btn btn-outline-success">View all</button>
+            </div>
+            <div class="row product-slick-slider ">
+                <div class="col-2">
+                    <div class="product-section rounded shadow-xsm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/tp1.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            <a hrefr"">
+                        </div>
+                        </a>
+                        <div class="stars p-1-half-alt">
+                            <a href="#" class="">121</a>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/tp2.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/tp3.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/tp4.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/tp5.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/tp6.jpg" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.jpg" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/tp7.jpg" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.jpg" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/tp8.jpg" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.jpg" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="border-0 shadow fb-arrow back-arrow go-b2"><i class="fal fa-chevron-left"></i></button>
+            <button class="border-0 shadow fb-arrow forward-arrow go-f2"><i class="fal fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <hr> -->
+    <!-- products listing ends -->
+    <!-- products listing start -->
+<!--     <section>
+        <div class="container-fluid px-3">
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">Lightings</h3>
+                <button class="btn btn-outline-success">View all</button>
+            </div>
+            <div class="row product-slick-slider ">
+                <div class="col-2">
+                    <div class="product-section rounded shadow-xsm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/l1.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            <a hrefr"">
+                        </div>
+                        </a>
+                        <div class="stars p-1-half-alt">
+                            <a href="#" class="">121</a>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/l2.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/l3.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/l4.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/l5.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/l6.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/l7.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/l8.jpg" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2jpg" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="border-0 shadow fb-arrow back-arrow go-b2"><i class="fal fa-chevron-left"></i></button>
+            <button class="border-0 shadow fb-arrow forward-arrow go-f2"><i class="fal fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <hr> -->
+    <!-- products listing ends -->
+    <!-- products listing start -->
+<!--     <section>
+        <div class="container-fluid px-3">
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">Furnitures</h3>
+                <button class="btn btn-outline-success">View all</button>
+            </div>
+            <div class="row product-slick-slider ">
+                <div class="col-2">
+                    <div class="product-section rounded shadow-xsm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/fr1.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            <a hrefr"">
+                        </div>
+                        </a>
+                        <div class="stars p-1-half-alt">
+                            <a href="#" class="">121</a>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/fr2.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/fr3.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/fr4.jpg" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.jpg" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/fr5.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/fr6.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/fr7.webp" alt="" class="w-100 ab image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 ab image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="border-0 shadow fb-arrow back-arrow go-b2"><i class="fal fa-chevron-left"></i></button>
+            <button class="border-0 shadow fb-arrow forward-arrow go-f2"><i class="fal fa-chevron-right"></i></button>
+        </div>
+    </section>
+    <hr> -->
+       <script>
+           var textWrapper = document.querySelector('.ml6 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: true})
+  .add({
+    targets: '.ml6 .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 750,
+    delay: (el, i) => 50 * i
+  }).add({
+    targets: '.ml6',
+    opacity: 0,
+    duration: 2000,
+    easing: "easeOutExpo",
+    delay: 1000
+  });
+       </script>
+  
+    
+    {% endblock body %}
+    <!-- products listing ends -->

@@ -1,0 +1,742 @@
+{% extends 'base.html' %} 
+{% load static %}
+    <!-- slider starts -->
+    <!-- {% block css %} {% endblock css %} -->
+    {% block body %}
+
+    <!-- navbar -->
+
+    <!-- breadcrum area start -->
+
+    <section class="container-fluid pb-0 d-none d-lg-block .d-xl-none">
+        <div class="py-0 breadcrum-area">
+            <ul class="list-unstyled ps-0 mb-0 d-flex justify-content-center">
+                <li class="mx-2"> <a href="/">Home</a></li>
+                <li class="mx-2"> <a href="/">Category</a></li>
+                <li class="mx-2"> <a href="#">subcategory</a></li>
+                <li class="mx-2"> <a href="#">{{product_desc.product_name}}</a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- breadcrum area ends -->
+
+
+    {% comment %} <div class="d-lg-none d-xl-block">
+        <p class="sidenabvar_hidden" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample" style="padding-left:10px;padding-top: 5px;position:fixed;
+        left:0;color:#0c5b51; background:#ffead9;width:100%;z-index: 1;"> 
+        <i class="fas fa-bars"></i> All
+        </p>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="background-color: rgba(246, 202, 145, 1.71); width:250px;">
+          <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasExampleLabel"> <div class="profile d-flex align-items-center mb-4">
+                  <img src="/static/assets/img/new-temp/logo.png"
+                      alt="" style="width: 50px;" class="rounded me-3">
+                  <h5 class="text-white mb-0">Hello, Arun sharma</h5>
+              </div>
+          </h5>
+              <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <div id="sidebar"> 
+                 
+                  <ul class="list-unstyled ps-0 side-nav-menu">
+                      <li>
+                          <a href="#" class="child-component" onclick="showChildCategory()">
+                              Home 1
+                              <i class="fal fa-chevron-down"></i>
+                          </a>
+                          <ul class="show-sub-category ps-4">
+                              <li>
+                                  <a href="#" onclick="showSubChildCategory()">
+                                      Home 2
+                                      <i class="fal fa-chevron-down"></i>
+                                  </a>
+                                  <ul class="show-sub-sub-category ps-3">
+                                      <li>
+                                          <a href="">home 3</a>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li><a href="">home 3</a></li>
+                              <li><a href="">home 4</a></li>
+                              <li><a href="">home 5</a></li>
+                          </ul>
+                      </li>
+          
+                      <li>
+                          <a href="#">
+                              Home & Décor
+                              <i class="fal fa-chevron-down"></i>
+                          </a>
+                      </li>
+          
+                      <li>
+                          <a href="#" onclick="showChildCategory()">
+                              Kitchen & Dinning
+                              <i class="fal fa-chevron-down"></i>
+                          </a>
+                          <ul class="show-sub-category">
+                              <li>
+                                  <a href="#" onclick="showSubChildCategory()">
+                                      Home 2
+                                      <i class="fal fa-chevron-down"></i>
+                                  </a>
+                                  <ul class="show-sub-sub-category">
+                                      <li>
+                                          <a href="">home 3</a>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li><a href="">home 3</a></li>
+                              <li><a href="">home 4</a></li>
+                              <li><a href="">home 5</a></li>
+                          </ul>
+                      </li>
+          
+                      <li>
+                          <a href="#">
+                              Storage & Organizer
+                              <i class="fal fa-chevron-down"></i>
+                          </a>
+                      </li>
+          
+                      <li>
+                          <a href="#">
+                              Bath
+                              <i class="fal fa-chevron-down"></i>
+                          </a>
+                      </li>
+          
+                      <li>
+                          <a href="#">
+                              Furniture
+                              <i class="fal fa-chevron-down"></i>
+                          </a>Product Details
+                          
+                      </li>
+          
+                      <li>
+                          <a href="#">
+                              Lighting
+                              <i class="fal fa-chevron-down"></i>
+                          </a>
+                      </li>
+          
+                      <li>
+                          <a href="#">
+                              Clothing
+                              <i class="fal fa-chevron-down"></i>
+                          </a>
+                      </li>
+          
+                      <li>
+                          <a href="#">
+                              Sale
+                              <i class="fal fa-chevron-down"></i>
+                          </a>
+                      </li>
+          
+          
+          
+                  </ul>
+              </div>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div> {% endcomment %}
+
+    <!-- product-description -->
+    <section class="container-fluid mt-4">
+        <div class="row">
+            <!-- images sections start -->
+            <div class="col-md-7">
+                <div class="stickit">
+                    <div class="row">
+                        <div class="col-md-3 order-md-1 order-2 gallery_pdp_container">
+                            <section class="" id="gallery_pdp">
+                                <div id="list" class="vertical horizontal slider p-0"> 
+                                      <div class="">
+                                        <img  src="{{product_desc.image_1.url}}"
+                                            alt="" width="100%" class="mini-image img-fluid" data-zoom="{{product_desc.image_1.url}}"  id="#image-1">
+                                    </div>
+                                
+                                     <div class="">   
+                                        <img  src="{{product_desc.image_2.url}}"
+                                            alt="" width="100%" class="mini-image img-fluid" data-zoom="{{product_desc.image_2.url}}"  id="#image-2">
+                                     </div>
+                                  
+                                     <div class="">
+                                        <img  src="{{product_desc.image_3.url}}"
+                                            alt="" width="100%" class="mini-image img-fluid" data-zoom="{{product_desc.image_3.url}}"  id="#image-3">
+                                     </div>
+                             
+                                     <div class="">
+                                        <img  src="{{product_desc.image_4.url}}"
+                                            alt="" width="100%" class="mini-image img-fluid" data-zoom="{{product_desc.image_4.url}}"  id="#image-4">
+                                     </div>
+                                 
+                                     <div class="">
+                                        <img  src="{{product_desc.image_5.url}}"
+                                            alt="" width="100%" class="mini-image img-fluid" data-zoom="{{product_desc.image_5.url}}"  id="#image-5">
+                                     </div>       
+                                </div>                
+                            </section>
+                        </div>
+                        <div class="col-md-9 order-md-2 order-1 mb-4">
+                            <div class="img_producto_container  " data-scale="2.6">
+                                <div class="dslc-lightbox-image img_producto">
+                               <img src="{{product_desc.image_1.url}}" data-zoom="{{product_desc.image_1.url}}"
+                                alt="" class="w-100 full-image active image1 responsive1 demo-trigger"  id="#image-1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- image section ends -->
+            <div class="col-md-5">
+                <div class="specs detail">
+                    <h2 style="font-weight: 100;">{{product_desc.product_name}}</h2>
+                    <div class="pb-2 stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <a href="#">13 reviews</a>
+                    </div>
+                    <h1 class="cost" style="font-weight: 100;">Rs.{{product_desc.price}}</h1>
+                    <p class="mb-0 saving">Save <span>$3,000.</span></p>
+                    <p class="mb-0 emis">No cost EMI starts at <span>$3,575/month</span></p>
+                    <p class="mb-0 mrp text-decoration-line-through">MRP $45,900.00</p>
+                    <p class="mb-0 all-taxes">(inclusive of all taxes)</p>
+                    <div class="shareIcon">
+                        <ul class="ps-0 list-unstyled d-flex mt-2">
+                            <li class="mx-1">Share : </li>
+                            <li class="mx-2"><a href="http://www.facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                            <li class="mx-2"><a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a></li>
+                            <li class="mx-2"><a href="https://www.whatsapp.com"><i class="fab fa-whatsapp"></i></a></li>
+                            <li class="mx-2"><a href="http://twitter.com"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                    </div>
+                    <!-- chooseing -->
+                    <div class=" mb-3">
+                        <h6 class=" mt-4 mb-3">Select Size <span><a href="#" class="text-decoration-underline"
+                                    style="font-weight: 200;font-size: 90%;">(See size chart)</a></span></h6>
+                        <button class="choose-btn me-2 choose-btn-size" onclick="selectProperty(this, 1)">28</button>
+                        <button class="choose-btn me-2 choose-btn-size" onclick="selectProperty(this, 1)">30</button>
+                        <button class="choose-btn me-2 choose-btn-size" onclick="selectProperty(this, 1)">32</button>
+                        <button class="choose-btn me-2 choose-btn-size" onclick="selectProperty(this, 1)">34</button>
+                        <button class="choose-btn me-2 choose-btn-size" onclick="selectProperty(this, 1)">36</button>
+                    </div>
+
+                    <div class="buy">
+                        <h6 class=" mt-4 mb-3">Select Color</h6>
+                        <button class="choose-btn me-2">red</button>
+                        <button class="choose-btn me-2">green</button>
+                        <button class="choose-btn me-2">Yellow</button>
+                    </div>
+
+            <!--         <div class=" mb-3">
+                        <h6 class=" mt-4 mb-3">Select Quantity</h6>
+                        <button class="choose-btn me-2">1</button>
+                        <button class="choose-btn me-2">2</button>
+                        <button class="choose-btn me-2">3</button>
+                        <select name="" id="">
+                            <option value="">more</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                            <option value="">6</option>
+                        </select>
+                    </div> -->
+
+                    <div class="mt-5 d-inline-flex">
+                       <a {% if product_desc.quantity == 0 %} href="#" {% else %} href="/basket/buy-now/{{product_desc.product_alias_name}}" {% endif %}> <button class="add-to-cart w-100 mb-3 mx-2" style="margin: -20px 15px;">Add To Basket</button></a>
+<!--                         <button class="add-to-cart w-100 mb-3 mx-2" {% if product_desc.quantity == 0 %} href="#" {% else %} href="/basket/buy-now/{{product_desc.product_alias_name}}" {% endif %}>Buy Now</button> -->
+                        <a {% if product_desc.quantity == 0 %} href="#" {% else %} href="/basket/buy-now/{{product_desc.product_alias_name}}" {% endif %}>
+                            <button class="add-to-cart w-100 mb-3" style="margin: -20px 10px;">Buy Now</button>
+                        </a>
+
+
+                    </div>
+
+                    <br />
+                    <!-- features -->
+                    <div class="mb-4">
+                        <h3 class="mb-3">Product Details</h3>
+                        <ul class="ps-3 mb-0" style="list-style-type: circle;">
+                        <li class="">{{product_desc.content|safe }}</li>
+                            {% comment %} <li class="">Automatically cleans a whole room properly, capturing 99.95% of harmful
+                                pollutants as small as 0.1 microns.*</li>
+                            <li class="">The only air purifier with 350° oscillation and Air Multiplierᵀᴹ
+                                technology.5</li>
+                            <li class="">Scientifically tested to capture pollutants as small as PM0.1, such as
+                                bacteria and viruses6</li>
+                            <li class="">Senses and displays PM2.5, PM10, VOCs, NO2 in real-time</li> {% endcomment %}
+                        </ul>
+                        <a href="#" class="p-4 text-decoration-underline">See all</a>
+                    </div>
+                    <!-- specifications -->
+             
+
+                    <!-- reviews -->
+                   
+                    <div class="mb-4">
+                    
+                        <h3 class="mb-3">Reviews</h3>
+                    {% for review in review_list %}
+                    {% if review.rating == 5%}
+                        <div class="pb-2 stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            5 stars 
+                        </div>
+                    {% endif %}    
+                    {% if review.rating == 4%}
+                        <div class="pb-2 stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            4 stars 
+                        </div>
+                    {% endif %} 
+                    {% if review.rating == 3%}
+                        <div class="pb-2 stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            3 stars 
+                        </div>
+                    {% endif %} 
+                    {% if review.rating == 2%}
+                        <div class="pb-2 stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            2 stars 
+                        </div>
+                    {% endif %} 
+                       <div class="position-relative review-section">
+                            <div class="review-subject" style="font-weight: 500;">{{review.review_title}}</div>
+                            <strong style="font-weight: 500;">{{review.name}}</strong>
+                                
+                            <p class="review-content">
+                                {{review.remark}}
+                            </p>
+                        
+                        </div>
+                    {% endfor %}      
+                     <hr> 
+            </div>
+                
+
+            </div>
+        </div>
+    </section>
+    <!--  -->
+
+    <!-- products listing start -->
+    <section>
+        <div class="container-fluid px-3 position-relative">
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">Related Products</h3>
+                <button class="btn btn-outline-success">View all</button>
+            </div>
+            
+            <div class="row product-slick-slider ">
+                {% for product in related_products %}
+                <div class="col-2">
+                    <div class="product-section rounded shadow-xsm">
+                        <a href="/product_description/{{product.id}}" class="hover-switch">
+                            <img src="{{product.image_1.url}}" alt="" class="w-100 image-o-product rounded">
+                            <img src="{{product.image_2.url}}" alt=""
+                                class="w-100 image-o-product rounded second-img">
+                        </a>
+                        <div class="name-o-product p-1 text-truncate">{{product.product_name}}
+                            <a href="">
+                        </div>
+                        </a>
+                        <div class="stars p-1-half-alt">
+                            <a href="#" class="">121</a>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">{{product.price}}</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+                {% comment %} <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/h2.webp" alt="" class="w-100 image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/h3.webp" alt="" class="w-100 image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/w2.webp" alt="" class="w-100 image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/w1.webp" alt="" class="w-100 image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/k2.webp" alt="" class="w-100 image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="product-section rounded shadow-sm">
+                        <a href="#" class="hover-switch">
+                            <img src="./img/new-temp/products/k3.webp" alt="" class="w-100 image-o-product rounded">
+                            <img src="./img/new-temp/products/fr2.webp" alt=""
+                                class="w-100 image-o-product rounded second-img">
+                        </a>
+                        <a href="">
+                            <div class="name-o-product p-1 text-truncate">Solid Turtle Neck Casual Men Grey Sweater
+                            </div>
+                        </a>
+                        <div class="stars px-1">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <i class="far fa-star"></i>
+                            <a href="#" class="">121</a>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">$949</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                </div> {% endcomment %}
+            </div>
+            <button class="border-0 shadow fb-arrow back-arrow go-b2"><i class="fal fa-chevron-left"></i></button>
+            <button class="border-0 shadow fb-arrow forward-arrow go-f2"><i class="fal fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+
+
+    <!-- footer ends -->
+ 
+   
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script src="./js/jquery.min.js"></script>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+     
+
+    <script>
+        $(document).ready(function () {
+            $('.carousel-slick-slider').slick({
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                arrows: true,
+                dots: true,
+                autoplay: true,
+                prevArrow: $(".go-b"),
+                nextArrow: $(".go-f"),
+                
+            });
+            
+            $('.category-slick-slider').slick({
+                infinite: true,
+                speed: 300,
+                slidesToShow: 8,
+                slidesToScroll: 8,
+                prevArrow: $(".go-b1"),
+                nextArrow: $(".go-f1"),
+            });
+            $('.product-slick-slider').slick({
+                infinite: false,
+                speed: 300,
+                slidesToShow: 6,
+                slidesToScroll: 4,
+                prevArrow: $(".go-b2"),
+                nextArrow: $(".go-f2"),
+                Vertical: true,
+                verticalSwiping: true,
+                responsive: [
+                {
+                  breakpoint: 1024,
+                  settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                  }
+                },
+                {
+                  breakpoint: 600,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                  }
+                },
+                {
+                  breakpoint: 480,
+                  settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                  }
+                }
+                
+              ]
+            });
+            $(".vertical,.horizontal").slick({
+                infinite: false,
+                dots: false,
+                speed: 300,
+                vertical: true,
+                slidesToShow:4,
+                slidesToScroll: 1,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                    vertical: false
+                    }
+                }]
+
+            });
+        });
+        $(".product-section").on({
+            mouseover: function () {
+                $(this).find("img:nth-child(1)").stop().animate({ opacity: 0 }, 600);
+                $(this).find("img:nth-child(2)").stop().animate({ opacity: 1 }, 600);
+            }, mouseout: function () {
+                $(this).find("img:nth-child(1)").stop().animate({ opacity: 1 }, 600);
+                $(this).find("img:nth-child(2)").stop().animate({ opacity: 0 }, 600);
+              
+            }
+        });
+    </script>
+  
+   
+   
+    <script>
+        $("#list img").click(function(){
+            var src=$(this).attr("src");
+            $(".image1").attr("src",src) ;
+          })
+    </script>
+   
+<script src="https://icodefy.com/Tools/iZoom/js/Vendor/jquery/jquery-ui.min.js"></script>
+    <script>
+        $(window).resize(function() {
+            var docWidth = $(document).width();
+            if (docWidth > 769) {
+                initZoom(500, 475);
+            } else {
+                $.removeData('#zoom_10', 'elevateZoom');
+                $('.zoomContainer').remove();
+                $('.zoomWindowContainer').remove();
+                $("#zoom_10").elevateZoom({
+                    responsive: true,
+                    tint: false,
+                    tintColour: '#3c3c3c',
+                    tintOpacity: 0.5,
+                    easing: true,
+                    borderSize: 0,
+                    loadingIcon: "https://icodefy.com/Tools/iZoom/images/loading.GIF",
+                    zoomWindowPosition: "productInfoContainer",
+                    zoomWindowWidth: 330,
+                    gallery: 'gallery_pdp',
+                    galleryActiveClass: "active",
+                    zoomWindowFadeIn: 500,
+                    zoomWindowFadeOut: 500,
+                    lensFadeIn: 500,
+                    lensFadeOut: 500,
+                    cursor: "https://icodefy.com/Tools/iZoom/images/zoom-out.png",
+                });
+                        
+            }
+        })
+        
+        $(document).ready(function() {
+         $("#zoom_10").fancybox();
+        });
+    </script>
+
+
+  
+    <script>
+        $(".img_producto_container")
+        // tile mouse actions
+        .on("mouseover", function() {
+          $(this)
+            .children(".img_producto")
+            .css({ transform: "scale(" + $(this).attr("data-scale") + ")" });
+        })
+        .on("mouseout", function() {
+          $(this)
+            .children(".img_producto")
+            .css({ transform: "scale(1)" });
+        })
+        .on("mousemove", function(e) {
+          $(this)
+            .children(".img_producto")
+            .css({
+              "transform-origin":
+                ((e.pageX - $(this).offset().left) / $(this).width()) * 100 +
+                "% " +
+                ((e.pageY - $(this).offset().top) / $(this).height()) * 100 +
+                "%"
+            });
+        });
+      
+    </script>
+
+</body>
+ {% endblock body %}
+
+ 
+
+</html>

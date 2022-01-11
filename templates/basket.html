@@ -1,0 +1,179 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+	 {% block body %}
+    <!-- breadcrum area start -->
+    <section class="container-fluid pb-0">
+        <div class="py-0 breadcrum-area">
+            <ul class="list-unstyled ps-0 mb-0 d-flex justify-content-center">
+                <li class="mx-2"> <a href="/">Home</a></li>
+                <li class="mx-2"> <a href="#">Cart</a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- breadcrum area ends -->
+
+    <!-- cart products starts -->
+    <section class="cartpage">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col col-sm-12 col-md-8 col-lg-7">
+                    <h3 class="mb-4">Order Summary</h3>
+                    {% for data in basket_data %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong><a href="/product_description/{{data.product.id}}">{{data.product.product_name}}</a></strong> has removed from cart
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    <div class="d-flex cart-card mb-3">
+                        <a href="/basket/remove-product/{{data.product.id}}"><span class="remove-item pointer">remove <i class="fal fa-times-circle ms-1"></i></span></a>
+                        
+                        <img src="{{data.product.image_1.url}}"
+                            alt="" class="rounded me-4" style="width: 150px;">
+                        <div class="">
+                            <a href="/product_description/{{data.product.id}}">
+                                <h3>{{data.product.product_name}}</h3>
+                                <h3>{{data.product.price}}<span>X 1</span></h3>
+                            </a>
+                            <div class="">Code <span>:{{data.product.product_code}}</span></div>
+                            <div class="">Size <span>:{{data.product.product_size}}</span></div>
+                            <div class="">Color <span>:{{data.product.product_color}}</span></div>
+                            <div class="">Weight <span>: 10</span></div>
+                            <div class="specs mb-3">
+                                <h6 class=" mt-4 mb-3">Select Quantity</h6>
+                                <button class="choose-btn me-2">1</button>
+                                <button class="choose-btn me-2">2</button>
+                                <button class="choose-btn me-2">3</button>
+                                <select name="" id="">
+                                    <option value="">more</option>
+                                    <option value="">4</option>
+                                    <option value="">5</option>
+                                    <option value="">6</option>
+                                </select>
+                            </div>
+                        </div>
+                    
+
+                    </div>
+                    {% endfor %}
+
+    
+
+
+                </div>
+                <div class="col col-sm-12 col-md-4 col-lg-3">
+                    <h3 class="mb-4">Order Summary</h3>
+                    <div class="cart-card">
+                        <table class="w-100">
+                            <tbody>
+                                <tr>
+                                    <td>Item(s) </td>
+                                    <td class="text-end">{{basket_count}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Subtotal</td>
+                                    <td class="text-end">₹{{subtotal}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Coupon (Diwali 200)</td>
+                                    <td class="text-end">- ₹ 00.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Estimated Tax</td>
+                                    <td class="text-end">₹ 00.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Total</td>
+                                    <td class="text-end">₹{{subtotal}}</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="2"> </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                    <a href="/checkout/">
+                                        <button  class="auth-2-btn">Continue to checkout</button>
+                                    </a>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- cart products ends -->
+
+    <!-- products listing start -->
+    <section>
+       
+        <div class="container-fluid px-3">
+            <div class="mb-3 d-flex justify-content-between align-items-center">
+                <h3 class="mb-0">Clothes</h3>
+                <button class="btn btn-outline-success">View all</button>
+            </div>
+          
+            
+            <div class="row product-slick-slider ">
+                {% for product in relate_product %}
+                <div class="col-2">
+                    
+                    <div class="product-section rounded shadow-xsm">
+                        <a href="/product_description/{{product.id}}" class="hover-switch">
+                            <img src="{{product.image_1.url}}" alt="" class="w-100 image-o-product rounded">
+                            <img src="{{product.image_2.url}}" alt=""
+                                class="w-100 image-o-product rounded second-img">
+                        </a>
+                        <div class="name-o-product p-1 text-truncate">{{product.product_name}}
+    
+                        </div>
+                        </a>
+                        <div class="stars p-1-half-alt">
+                            <a href="#" class="">121</a>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <a href="">
+                            <div class="d-flex px-1 pb-2">
+                                <div class="price-o-product">{{product.price}}</div>
+                                <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                </div>
+                                <div class="off-o-product">52% off</div>
+                            </div>
+                        </a>
+                    </div>
+                 
+                    
+                    
+                </div>
+                
+                {% endfor %}
+                
+     
+            </div> 
+        
+           
+            <button class="border-0 shadow fb-arrow back-arrow go-b2"><i class="fal fa-chevron-left"></i></button>
+            <button class="border-0 shadow fb-arrow forward-arrow go-f2"><i class="fal fa-chevron-right"></i></button>
+        </div>
+        
+    </section>
+    <hr>
+    <!-- products listing ends -->
+
+
+
+
+</body>
+
+ {% endblock body %}
+
+</html>

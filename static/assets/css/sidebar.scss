@@ -1,0 +1,49 @@
+#sidebar {
+    width: 250px;
+    background-color: #f6ca91b5;
+    height: 100vh;
+    backdrop-filter: blur(30px);
+    position: fixed;
+    transition: 0.5s;
+    left: 0;
+    z-index: 999;
+    top: 0;
+    .side-nav-menu {
+        li {
+            width: 100%;
+            a {
+                padding: 4px 0px;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                -webkit-tap-highlight-color: #0000;
+            }
+            i {
+                float: right;
+                transform: rotate(-90deg);
+            }
+            &:hover {
+            }
+        }
+    }
+}
+.show-sub-category,
+.show-sub-sub-category {
+    display: none;
+    transition: 0.6s;
+}
+ul ul {
+    list-style-type: circle;
+}
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: #e9dccb26;
+    z-index: 99;
+    height: 100%;
+    backdrop-filter: blur(3px);
+}

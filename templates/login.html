@@ -1,0 +1,68 @@
+{% extends 'base.html' %} 
+{% load static %}
+    <!-- slider starts -->
+    <!-- {% block css %} {% endblock css %} -->
+    {% block body %}
+
+
+<body>
+<!-- navbar -->
+    <div class="container-fluid">
+        <form class="needs-validation" novalidate="" method="post">
+            {% csrf_token %}
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card auths mt-5 p-5">
+                        <div class="auth-title mb-3">
+                            <h1 class="">MEMBER SIGN IN</h1>
+                            <p>Sign in to your account</p>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="usermail" class="form-label">Email/Mobile Number</label>
+                            <input type="text" class="form-control" id="usermail" name="username"
+                                placeholder="Enter your email address" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-5">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group has-validation">
+                                <input type="password" class="form-control" id="password"
+                                    aria-describedby="inputGroupPrepend" placeholder="Enter 8 digit password" name='password' required>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary auth-btn" type="submit">Sign In</button>
+                        </div>
+                        {% if login_status == False %}
+                        <p style="color:red;">Please enter valid password!</p>
+                        {% endif %}
+                        <div class="row">
+                            <div class="col-lg-6 col"><p>I am a new member </p> </div>
+                            <div class="col-lg-6 col text-end"><a href="#">Forgot Password!</a></div>
+                        </div>
+                        <div class="mb-3">
+                            <a class="btn btn-primary auth-2-btn" href="/customer/registration/" type="submit" style="padding:12px 0;">Create A New Account</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <!-- footer ends -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</body>
+{% endblock body %}
+
+</html>

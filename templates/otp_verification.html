@@ -1,0 +1,124 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link href="" rel="stylesheet">
+    <title>Title of website</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'assets/css/custom-css1.css' %}">
+    <!-- seo tags -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:site_name" content="name of website">
+    <!-- thumbnail of shared website-->
+    <meta property='og:title' content='TITLE OF YOUR WEBSITE' />
+    <meta property='og:image' content='https://YOUR_THUMBNAIL_IMAGE_URL' />
+    <meta property='og:description' content='DESCRIPTION OF YOUR SITE' />
+    <meta property='og:url' content='URL OF YOUR WEBSITE' />
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='627' />
+    <meta property="og:type" content='website' />
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="https://miro.medium.com/fit/c/152/152/1*sHhtYhaCe2Uc3IU0IgKwIQ.png">
+
+    <style>
+        .digit-group input {
+            width: 45px;
+            height: 45px;
+            background-color: #fff;
+            border: 1px solid;
+            line-height: 50px;
+            text-align: center;
+            font-size: 24px;
+            border-radius: 8px;
+            font-weight: 200;
+            color: #b46624;
+            margin: 0 2px;
+        }
+
+        .splitter {
+            padding: 0 5px;
+            color: white;
+            font-size: 24px;
+        }
+    </style>
+
+<body>
+
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="card auths mt-5 p-5">
+                    <div class="auth-title mb-3">
+                        <h1 class="">OTP Verification</h1>
+                        <p>We have sent you a 4 digit OTP on your registered mobile number.</p>
+                         {% for message in messages %}
+                          {{ message }}
+                          {% endfor %}
+                    </div>
+                    <form method="post" class="digit-group" data-group-name="digits" data-autosubmit="false"
+                        autocomplete="off">
+                        {% csrf_token %}
+                        <input type="text" id="digit-1" name="digit-1" data-next="digit-2" />
+                        <input type="text" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1" />
+                        <input type="text" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2" />
+                        <input type="text" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3" />
+                        <input type="text" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4" />
+                        <input type="text" id="digit-6" name="digit-6" data-previous="digit-5" />
+                        <div class="mt-5 mb-3">
+                            <button class="btn btn-primary auth-2-btn" type="submit">Create A New Account</button>
+                        </div>
+                        <a href="/customer/resend-otp/{{auth_user_id}}" class="btn btn-clear">Resend OTP</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer ends -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $('.digit-group').find('input').each(function () {
+            $(this).attr('maxlength', 1);
+            $(this).on('keyup', function (e) {
+                var parent = $($(this).parent());
+
+                if (e.keyCode === 8 || e.keyCode === 37) {
+                    var prev = parent.find('input#' + $(this).data('previous'));
+
+                    if (prev.length) {
+                        $(prev).select();
+                    }
+                } else if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 65 && e.keyCode <= 90) || (e.keyCode >= 96 && e.keyCode <= 105) || e.keyCode === 39) {
+                    var next = parent.find('input#' + $(this).data('next'));
+
+                    if (next.length) {
+                        $(next).select();
+                    } else {
+                        if (parent.data('autosubmit')) {
+                            parent.submit();
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

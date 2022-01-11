@@ -1,0 +1,112 @@
+{% extends 'base.html' %} 
+{% load static %}
+    <!-- slider starts -->
+    <!-- {% block css %} {% endblock css %} -->
+    {% block body %}
+    <section class="container-fluid pb-0">
+        <div class="py-0 breadcrum-area">
+            <ul class="list-unstyled ps-0 mb-0 d-flex justify-content-center">
+                <li class="mx-2"> <a href="/">Home</a></li>
+                <li class="mx-2"> <a href="#">Terms & Conditions</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <div class="container-fluid">
+             <h1>Terms and conditions <br></h1>
+  
+            <p>Please read this document carefully and give your consent at the bottom.</p>
+            <p>This document contains the terms and conditions of processing personal data by Oview (herein after referred to as the “Terms and Conditions”). Additional provisions concern the different aspects of Oview activities presented in<
+            <p>In order to gain access to Oview, we ask you to provide your personal information (“Personal Data”). All information that you disclose is confidential and protected from unauthorized disclosure, tampering, or damage.></p>
+            <p>Your participation is voluntary. According to the Terms and Conditions you give your consent to use your personal data in accordance with the following conditions:</p>   
+            <br>
+              
+              
+
+
+            <h2>Subject and purpose of data collection/data processing</h2>
+
+            <p>Oview, limited liability partnership (LLP), including its subsidiaries, affiliates, divisions, contractors, and all data sources and suppliers, (collectively “Oview”, “we”, “us” or “our”) – a global online platform where opinions are created, acknowledged and transformed into universally accessible visualised data with the intention to induce a civilization that is inspired by the freely created opinions of the majority, which are supported by unbiased information. </p>
+            <p>Oview provides access to a system where users can:</p>
+            <p>– create polar questions (Yes/No questions) about current articles (the “survey questions”). This is done via the backend;</p>
+            <p>It is important to note that all analysis of the survey results such as reports, statistical tables, charts, graphics or other visual forms (“statistical reports”), are always aggregated into statistical information without compromising individual votes.</p>
+
+
+
+                <h2>Personal data</h2>
+            <p>During the registration in Oview we ask you to provide personal data which includes your name, birth date, gender, education level, location (city), language preference and/or other categories of personal data which Oview will decide to include in the future. Providing this personal data is optional, and it determines the amount of information in statistical reports the user will be able to see after responding to the survey questions; meaning; providing your personal data gives access to the corresponding aggregated data in the statistics reports. It is possible at any point to remove and/or add personal data, and that will immediately change the extent of access to the relevant statistical reports</p>
+            <p>such as cookies, and/or other technologies, and subsidiary analytical software as described in our Cookies Policy and in accordance to Dutch and international law. The statistical information of your activities in your Oview account can be used for improvement of our system including security policies, but not limited to it alone.</p>
+            <p>We collect information from your mobile device about the system and model of your device, version of your operating system, and statistical information about the equipment of your device such as the processor,short-term memory, internal memory, application versions and similar. This information could be used as statistical data for improvement of our system including security policies, but not limited to it alone.</p>
+
+              <br>
+                
+
+                        <h2>Processing of Personal Data</h2>
+            <p>Without infringement of personal protection and in accordance to Dutch, European, and international Data Protection Law. Oview has the right to use all data collected for actions or a set of actions, including the collection, recording, organization, storage, updating or modification, retrieval, consultation, use, dissemination by means of transmission, distribution or display in any other form, merging, linking, as well as blocking, erasure or destruction of data (“processing”)</p>
+            <p>Oview will store personal data on a special database in the server of third parties (the “provider”). This provider stores personal data in accordance with the Terms and Conditions of the special agreement between us and this provider. All provider activity related to personal data is regulated by the Terms and Conditions, our Privacy Policy&nbsp;and the provider’s Privacy Policy. The provider guarantees additional security measures to your personal data with relation to the server where all data are saved. </p>
+            <p> Your personal data is protected from unauthorized access also from the third parties through our encryption during transmission, storage, and other processing of personal data to increase the level of safety of your personal data.</p>
+            
+
+
+                        <h2> Providing personal data to third parties </h2>
+            <p> We keep your personal data in accordance with confidentiality requirements by law and without infringement of your privacy. </p>
+            <p> Specific employees of Oview have a key to the codified personal data for the purposes of improvement of the application system including, but not limited to security policy, for ensuring proper operation of the platform, and for other legitimate purposes related to Oview activities. </p>
+            <p> Third parties can view the statistical reports without any personal identification of the users. </p>
+            <br>
+
+
+
+                        <h2>Limitations of the validity of the the Terms and Conditions</h2>
+            <p> You agree, for an unlimited time, to give your consent regarding your personal data to Oview according to the terms and conditions as described in the Terms and Conditions. </p>
+            <p> Oview has the right to change the Terms and Conditions without any notification unless these changes reduce users  rights; it will not be done without the notice and additional consent of the users. </p>
+            <br>
+
+
+
+
+                   
+
+    </section>
+    <!-- about -->
+
+    <!-- footer ends -->
+     <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+         <script>
+            $( "#openNav" ).click(function() {
+              $('#mySidenav').addClass('open');
+              $('body').addClass('');
+            });
+            $( "#closeNav" ).click(function() {
+              $('#mySidenav').removeClass('open');
+              $('body').removeClass('');
+            });
+            </script>
+   
+    
+
+     <script>
+        function showChildCategory() {
+            document.getElementsByClassName('show-sub-category')[0].style.display = "block"
+        }
+        function showSubChildCategory() {
+            document.getElementsByClassName('show-sub-sub-category')[0].style.display = "block"
+
+        }
+        function sidebarOverlay() {
+            document.getElementById('sidebar').style.transition = "fade"
+            document.getElementById('sidebar').style.display = "none"
+        }
+    </script>
+
+     
+
+    
+</body>
+ {% endblock body %}
+
+</html>

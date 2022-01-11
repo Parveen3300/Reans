@@ -1,0 +1,113 @@
+{% extends 'base.html' %} 
+{% load static %}
+    <!-- slider starts -->
+    <!-- {% block css %} {% endblock css %} -->
+    {% block body %}
+
+  <!-- navbar -->
+ 
+<!-- navbar -->
+    <div class="container-fluid">
+        {% comment %} {% for message in messages %}
+        <span style="color:red;">{{ message }}</span>
+        {% endfor %} {% endcomment %}
+        <form class="needs-validation" novalidate="" id="registration_form" method="post">
+            {% csrf_token %}
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <div class="card auths mt-5 p-5">
+                        <div class="auth-title mb-3">
+                            <h1 class="">BECOME A MEMBER</h1>
+                            <p>Become a member of REANDER to track and manage your orders, your customer details, receive special discounts, early access to promos and many more member exclusives!</p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="userFname" class="form-label">First Name</label>
+                            <input type="text" class="form-control"  value="" name='firstname'
+                                placeholder="Enter your First Name" Id="userFname">
+                                <p Id="demo"></p>
+                                
+                        </div>
+                        <div class="mb-3">
+                            <label for="userLname" class="form-label">Last Name</label>
+                            <div class="input-group has-validation">
+                                <input type="text" class="form-control" id="userLname" name='lastname'
+                                    aria-describedby="inputGroupPrepend" placeholder="Enter Your Last Name" required/>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="usermail" class="form-label">Email/Mobile Number</label>
+                            <input type="text" class="form-control" id="usermail" name='username'
+                                placeholder="Enter your email address/Mobile Number" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group has-validation">
+                                <input type="password" class="form-control" id="password" name='password'
+                                    aria-describedby="inputGroupPrepend" placeholder="Enter 8 digit password" required/>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Confirm Password</label>
+                            <div class="input-group has-validation">
+                                <input type="password" class="form-control" id="confirm_password" name='confirm_password'
+                                    aria-describedby="inputGroupPrepend" placeholder="confirm password" required/>
+                                <div class="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required/>
+                                <label class="form-check-label" for="invalidCheck">
+                                    Agree to terms and conditions
+                                </label>
+                                <div class="invalid-feedback">
+                                    You must agree before submitting.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-primary auth-btn" type="submit" onclick="myFunction()">Sign In</button>
+                        </div>
+                        <!-- <p>I am already a member </p> -->
+                      <!--   <div class="mb-3">
+                            <a class="btn btn-primary auth-2-btn" href="/customer/login/">Sign In To Account</a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function myFunction() { 
+          var x = document.getElementById("userFname").value;
+          if (x=="") {
+          document.getElementById("demo").innerHTML = "Please fill your name"; 
+
+         }
+          }
+        </script>
+
+    <!-- footer ends -->
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</body>
+ {% endblock body %}
+ 
+
+
+</html>

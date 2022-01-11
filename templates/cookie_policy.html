@@ -1,0 +1,98 @@
+{% extends 'base.html' %} 
+{% load static %}
+    <!-- slider starts -->
+    <!-- {% block css %} {% endblock css %} -->
+    {% block body %}
+
+
+    <!-- breadcrum area start -->
+    <section class="container-fluid pb-0">
+        <div class="py-0 breadcrum-area">
+            <ul class="list-unstyled ps-0 mb-0 d-flex justify-content-center">
+                <li class="mx-2"> <a href="/">Home</a></li>
+                <li class="mx-2"> <a href="#">Cookies Policy</a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- breadcrum area ends -->
+
+    <!-- about -->
+   <section>
+        <div class="container-fluid">
+             <h1>Cookies</h1>
+  
+            <p>Please read this document carefully and give your consent at the bottom.</p>
+            <p>We use these cookies to gather inforamtion about the way users interact with our website.
+                We use this information to creat reports and help us improve the website.
+                If you do not allow these cookies we will not be able to include your vist in our statistics.</p>   
+            <br>
+              
+              
+
+
+            <h2>Subject and purpose of data collection/data processing</h2>
+
+            <p>Oview, limited liability partnership (LLP), including its subsidiaries, affiliates, divisions, contractors, and all data sources and suppliers, (collectively “Oview”, “we”, “us” or “our”) – a global online platform where opinions are created, acknowledged and transformed into universally accessible visualised data with the intention to induce a civilization that is inspired by the freely created opinions of the majority, which are supported by unbiased information. </p>
+            <p>Oview provides access to a system where users can:</p>
+            <p>– create polar questions (Yes/No questions) about current articles (the “survey questions”). This is done via the backend;</p>
+            <p>It is important to note that all analysis of the survey results such as reports, statistical tables, charts, graphics or other visual forms (“statistical reports”), are always aggregated into statistical information without compromising individual votes.</p>
+
+
+
+                <h2>Personal data</h2>
+            <p>During the registration in Oview we ask you to provide personal data which includes your name, birth date, gender, education level, location (city), language preference and/or other categories of personal data which Oview will decide to include in the future. Providing this personal data is optional, and it determines the amount of information in statistical reports the user will be able to see after responding to the survey questions; meaning; providing your personal data gives access to the corresponding aggregated data in the statistics reports. It is possible at any point to remove and/or add personal data, and that will immediately change the extent of access to the relevant statistical reports</p>
+            <p>such as cookies, and/or other technologies, and subsidiary analytical software as described in our Cookies Policy and in accordance to Dutch and international law. The statistical information of your activities in your Oview account can be used for improvement of our system including security policies, but not limited to it alone.</p>
+            <p>We collect information from your mobile device about the system and model of your device, version of your operating system, and statistical information about the equipment of your device such as the processor,short-term memory, internal memory, application versions and similar. This information could be used as statistical data for improvement of our system including security policies, but not limited to it alone.</p>
+
+              <br>
+                
+
+
+
+
+                   
+
+    </section>
+    <!-- about -->
+
+
+    <!-- footer ends -->
+     <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+         <script>
+            $( "#openNav" ).click(function() {
+              $('#mySidenav').addClass('open');
+              $('body').addClass('');
+            });
+            $( "#closeNav" ).click(function() {
+              $('#mySidenav').removeClass('open');
+              $('body').removeClass('');
+            });
+            </script>
+   
+    
+
+     <script>
+        function showChildCategory() {
+            document.getElementsByClassName('show-sub-category')[0].style.display = "block"
+        }
+        function showSubChildCategory() {
+            document.getElementsByClassName('show-sub-sub-category')[0].style.display = "block"
+
+        }
+        function sidebarOverlay() {
+            document.getElementById('sidebar').style.transition = "fade"
+            document.getElementById('sidebar').style.display = "none"
+        }
+    </script>
+
+     
+
+    
+</body>
+{% endblock body %}
+
+</html>

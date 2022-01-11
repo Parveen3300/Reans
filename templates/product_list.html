@@ -1,0 +1,257 @@
+{% extends 'base.html' %} 
+{% load static %}
+    <!-- slider starts -->
+    <!-- {% block css %} {% endblock css %} -->
+    {% block body %}
+
+    <!-- navbar -->
+
+    <!-- breadcrum area start -->
+    <section class="container-fluid pb-0">
+        <div class="py-0 breadcrum-area">
+            <ul class="list-unstyled ps-0 mb-0 d-flex justify-content-center">
+                <li class="mx-2"> <a href="/">Home</a></li>
+                <li class="mx-2"> <a href="#">Category Products</a></li>
+                {% comment %} <li class="mx-2"> <a href="#">subcategory</a></li> {% endcomment %}
+                {% comment %} <li class="mx-2"> <a href="#">Product name</a></li> {% endcomment %}  
+            </ul>
+        </div>
+    </section>
+    <!-- breadcrum area ends -->
+
+
+    <!-- product list page start -->
+    <form method="post">
+    {% csrf_token %}
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 px-0">
+                <!-- sorting --> 
+                <h5 class="mt-0 mb-3"> <i class="fal fa-sort-amount-up-alt me-3"></i>Sort Products</h5>
+                <div class="sorting">
+                    <select name="price" id="priceFilter" class="form-select">
+                        <option value="low">Price Low to high</option>
+                        <option value="high">Price High to low</option>
+                        <option value="popularity">Popularity</option>
+                        <option value="rating">Ratings</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+                <hr>
+                <!-- filters -->
+                <h5 class="mt-4 mb-3"> <i class="fal fa-sort-amount-up-alt me-3"></i>Apply Filters</h5>
+                <div class="filters">
+                    <div class="accordion" id="accordionPanelsStayOpenExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="stayOpen-color">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#opened-color-collapse" aria-expanded="true"
+                                    aria-controls="opened-color-collapse">
+                                    Color
+                                </button>
+                            </h2>
+                            <div id="opened-color-collapse" class="accordion-collapse collapse show"
+                                aria-labelledby="stayOpen-color">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled ps-0 mb-0">
+                                        <li><input type="checkbox" value="red" name="color" id="red" class="form-check-input me-2"><label
+                                                class="form-check-label" for="red">red</label></li>
+                                        <li><input type="checkbox" value="green" name="color" id="green"
+                                                class="form-check-input me-2"><label class="form-check-label"
+                                                for="green">green</label></li>
+                                        <li><input type="checkbox" value="black" name="color" id="black"
+                                                class="form-check-input me-2"><label class="form-check-label"
+                                                for="purple">black</label>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="stayOpen-size">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#opened-size-collapse" aria-expanded="false"
+                                    aria-controls="opened-size-collapse">
+                                    Size
+                                </button>
+                            </h2>
+                            <div id="opened-size-collapse" name="size" class="accordion-collapse collapse"
+                                aria-labelledby="stayOpen-size">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled ps-0 mb-0">
+                                        <li><input type="checkbox" value="small" name="size" id="S" class="form-check-input me-2"><label
+                                                class="form-check-label" for="S">S</label></li>
+                                        <li><input type="checkbox" value="medium" name="size" id="M" class="form-check-input me-2"><label
+                                                class="form-check-label" for="M">M</label></li>
+                                        <li><input type="checkbox" value="large" name="size" id="L" class="form-check-input me-2"><label
+                                                class="form-check-label" for="L">L</label></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="stayOpen-price">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#opened-price-collapse" aria-expanded="false"
+                                    aria-controls="opened-price-collapse">
+                                    Price
+                                </button>
+                            </h2>
+                            <div id="opened-price-collapse" class="accordion-collapse collapse"
+                                aria-labelledby="stayOpen-price">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled ps-0 mb-0">
+                                        <li><input type="checkbox" name="" id="100" class="form-check-input me-2"><label
+                                                class="form-check-label" for="100">> 100</label></li>
+                                        <li><input type="checkbox" name="" id="100-2000"
+                                                class="form-check-input me-2"><label class="form-check-label"
+                                                for="100-2000">100-2000</label></li>
+                                        <li><input type="checkbox" name="" id="200-300"
+                                                class="form-check-input me-2"><label class="form-check-label"
+                                                for="200-300">200-300</label></li>
+                                        <li><input type="checkbox" name="" id="400" class="form-check-input me-2"><label
+                                                class="form-check-label" for="400">> 400</label></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="stayOpen-brand">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#opened-brand-collapse" aria-expanded="false"
+                                    aria-controls="opened-brand-collapse">
+                                    Brand
+                                </button>
+                            </h2>
+                            <div id="opened-brand-collapse" class="accordion-collapse collapse"
+                                aria-labelledby="stayOpen-brand">
+                                <div class="accordion-body">
+                                    <ul class="list-unstyled ps-0 mb-0">
+                                        <li><input type="checkbox" name="" id="Louie Vitton"
+                                                class="form-check-input me-2"><label class="form-check-label"
+                                                for="Louie Vitton">Louie Vitton</label></li>
+                                        <li><input type="checkbox" name="" id="Gucchi"
+                                                class="form-check-input me-2"><label class="form-check-label"
+                                                for="Gucchi">Gucchi</label></li>
+                                        <li><input type="checkbox" name="" id="Dior"
+                                                class="form-check-input me-2"><label class="form-check-label"
+                                                for="Dior">Dior</label></li>
+                                        <li><input type="checkbox" name="" id="Luxury Law"
+                                                class="form-check-input me-2"><label class="form-check-label"
+                                                for="Luxury Law">Luxury Law</label></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="d-flex mb-4 align-items-center">
+                    {% comment %} <button class="filter-btn">Applied Filters</button>  {% endcomment %}
+                    {% comment %} <button class="btn-sm filter-btn">$100 <span><i class="far ms-1 fa-times-circle"></i></span></button>
+                    <button class="btn-sm filter-btn">red <span><i class="far ms-1 fa-times-circle"></i></span></button>
+                    <button class="btn-sm filter-btn">$100 <span><i class="far ms-1 fa-times-circle"></i></span></button>
+                    <button class="btn-sm filter-btn">red <span><i class="far ms-1 fa-times-circle"></i></span></button>
+                    <button class="btn-sm filter-btn">$100 <span><i class="far ms-1 fa-times-circle"></i></span></button>
+                    <button class="btn-sm filter-btn">red <span><i class="far ms-1 fa-times-circle"></i></span></button> {% endcomment %}
+                </div>
+                <div class="row">
+                 {% for product in product_list %}
+                    <div class="col-md-3">   
+                        <div class="product-section rounded shadow-sm mb-4">
+                            <a href="/product_description/{{product.id}}" class="hover-switch">
+                                <img src="{{product.image_1.url}}" alt=""
+                                    class="w-100 image-o-product rounded">
+                                <img src="{% static 'assets/img/new-temp/products/fr2.webp' %}" alt=""
+                                    class="w-100 image-o-product rounded second-img">
+                                </a>
+                              <div class="name-o-product p-1 text-truncate">{{product.product_name}}
+                             </div>               
+                             </a>
+                             <div class="stars p-1-half-alt">
+                                <a href="/product_description/" class="">121</a>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                             </div>
+                            <a href="/product_description/">
+                                <div class="d-flex px-1 pb-2">
+                                    <div class="price-o-product">Rs.{{product.price}}</div>
+                                    <div class="original-price-o-product text-muted text-decoration-line-through">$1,999
+                                    </div>
+                                    <div class="off-o-product">52% off</div>
+                                </div>
+                            </a>
+                        </div>   
+                    </div>
+                {% endfor %}   
+           </section>
+      </form>
+    <!-- product list page ends -->
+
+    <!-- footer start -->
+
+    <!-- footer ends --> 
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.carousel-slick-slider').slick({
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                arrows: true,
+                dots: true,
+                autoplay: true,
+                prevArrow: $(".go-b"),
+                nextArrow: $(".go-f"),
+            });
+            $('.category-slick-slider').slick({
+                infinite: true,
+                speed: 300,
+                slidesToShow: 8,
+                slidesToScroll: 8,
+                prevArrow: $(".go-b1"),
+                nextArrow: $(".go-f1"),
+            });
+            $('.product-slick-slider').slick({
+                infinite: false,
+                speed: 300,
+                slidesToShow: 6,
+                slidesToScroll: 4,
+                prevArrow: $(".go-b2"),
+                nextArrow: $(".go-f2"),
+
+            });
+
+        });
+        $(".product-section").on({
+            mouseover: function () {
+                $(this).find("img:nth-child(1)").stop().animate({ opacity: 0 }, 600);
+                $(this).find("img:nth-child(2)").stop().animate({ opacity: 1 }, 600);
+            }, mouseout: function () {
+                $(this).find("img:nth-child(1)").stop().animate({ opacity: 1 }, 600);
+                $(this).find("img:nth-child(2)").stop().animate({ opacity: 0 }, 600);
+            }
+        });
+    </script>
+       
+    <script> 
+        $(function () {
+        $(".xzoom, .xzoom-gallary").xzoom({
+                zoomWidth:400,
+                tint:"#333",
+                Xoffset: 15,
+        });
+    });
+    </script>
+
+</body>
+ {% endblock body %}
+
+</html>

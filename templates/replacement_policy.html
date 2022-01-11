@@ -1,0 +1,94 @@
+{% extends 'base.html' %} 
+{% load static %}
+    <!-- slider starts -->
+    <!-- {% block css %} {% endblock css %} -->
+    {% block body %}    
+    
+
+    <!-- breadcrum area start -->
+    <section class="container-fluid pb-0">
+        <div class="py-0 breadcrum-area">
+            <ul class="list-unstyled ps-0 mb-0 d-flex justify-content-center">
+                <li class="mx-2"> <a href="/">Home</a></li>
+                <li class="mx-2"> <a href="#">Return & Refund Policy</a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- breadcrum area ends -->
+
+    <!-- about -->
+    <section>
+        <div class="container-fluid">
+            <h1>Returns & Refund <br></h1>
+            <p>To edit this page simply login to the control panel, click the Website Content tab and choose the View Web Pages option.
+                 Click Edit next to the Shipping & Returns page and you can change this text. A sample returns policy is shown below which 
+                 you can edit as needed.:</p>   
+            <br>
+            <h2>Returns Policy</h2>
+              <p>You may return most new, unopened items within 30 days of delivery for a full refund.
+             We'll also pay the return shipping costs if the return is a result of our error (you received an incorrect or 
+             defective item, etc.).</p>
+             <p>You should expect to receive your refund within four weeks of giving your package to the return shipper, 
+                 however, in many cases you will receive a refund more quickly. This time period includes the transit time 
+                 for us to receive your return from the shipper (5 to 10 business days), the time it takes us to process your 
+                 return once we receive it (3 to 5 business days), and the time it takes your bank to process our refund request (
+                5 to 10 business days).</p>
+              <p>If you need to return an item, please Contact Us with your order number and details about the product you would like 
+                to return. We will respond quickly with instructions for how to return items from your order.</p>
+              <br>
+                <h2>Shipping</h2>
+               <p>We can ship to virtually any address in the world. Note that there are restrictions on some products, and some products cannot be shipped to international destinations./p>
+               <p>When you place an order, we will estimate shipping and delivery dates for you based on the availability of your items and the shipping options you choose. Depending on the shipping provider you choose, shipping date estimates may appear on the shipping quotes page.</p>
+               <p>Please also note that the shipping rates for many items we sell are weight-based. The weight of any such item can be found on its detail page. To reflect the policies of the shipping companies we use, all weights will be rounded up to the next full pound.</p>
+              <br>
+              <h2>Cancallation Policy</h2>
+              <p>An easy cancellation process is available for all our esteemed customers. You can cancel your online order before the
+                   product has been shipped. Your entire order amount will be refunded.
+                  </p>
+             <br>
+       
+            <br>
+    </section>
+    <!-- about -->
+
+    <!-- footer start -->
+    <!-- footer ends -->
+     <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+         <script>
+            $( "#openNav" ).click(function() {
+              $('#mySidenav').addClass('open');
+              $('body').addClass('');
+            });
+            $( "#closeNav" ).click(function() {
+              $('#mySidenav').removeClass('open');
+              $('body').removeClass('');
+            });
+            </script>
+   
+    
+
+     <script>
+        function showChildCategory() {
+            document.getElementsByClassName('show-sub-category')[0].style.display = "block"
+        }
+        function showSubChildCategory() {
+            document.getElementsByClassName('show-sub-sub-category')[0].style.display = "block"
+
+        }
+        function sidebarOverlay() {
+            document.getElementById('sidebar').style.transition = "fade"
+            document.getElementById('sidebar').style.display = "none"
+        }
+    </script>
+
+     
+
+    
+</body>
+ {% endblock body %}
+
+</html>

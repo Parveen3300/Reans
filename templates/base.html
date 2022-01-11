@@ -1,0 +1,1005 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link href="" rel="stylesheet">
+    {% block css %} {% endblock css %}
+    <title>Title of website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/custom-css1.css">
+    <link rel="stylesheet" href="./css/side r.css">
+    <!-- <link rel="stylesheet" href="./css/custom-css1.css"> -->
+    <link rel="stylesheet" href="{% static 'assets/css/custom-css1.css' %}">
+    <!-- seo tags -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:site_name" content="name of website">
+    <link rel="stylesheet" href="./css/custom-css1.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
+    
+    <!-- thumbnail of shared website-->
+    <meta property='og:title' content='TITLE OF YOUR WEBSITE' />
+    <meta property='og:image' content='https://YOUR_THUMBNAIL_IMAGE_URL' />
+    <meta property='og:description' content='DESCRIPTION OF YOUR SITE' />
+    <meta property='og:url' content='URL OF YOUR WEBSITE' />
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='627' />
+    <meta property="og:type" content='website' />
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="https://miro.medium.com/fit/c/152/152/1*sHhtYhaCe2Uc3IU0IgKwIQ.png">
+     <link rel="stylesheet" type="text/css" href="./css/sidenavbar.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+        <style>
+
+
+
+            .img_producto_container {
+                width:100%;
+                height: 50vh;
+                position: relative;
+                overflow: hidden;
+                cursor: zoom-in;
+              }
+              .img_producto {
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                transition: transform 0.5s ease-out;
+              }
+              
+              .responsive1{
+                height:50vh!important;
+            }
+
+
+            @media screen and (max-width:768px){
+                .responsive1{
+                    height:30vh!important;
+                }
+    
+                .img_producto_container {
+                    height:35vh;
+                  }
+                  .product_desc{
+                      padding:0;
+                  }
+
+            }
+
+
+            @media screen and (max-width:1024px){
+                .responsive1{
+                    height:35vh!important;
+                }
+    
+            }
+
+
+            .slick-prev {
+                left: -10px;
+            }
+    
+            .slick-next {
+                right: -10px;
+            }
+    
+            .slick-slide .mini-image {
+                display: block;
+                height: 115px;
+                cursor: pointer;
+                width: 130px
+             
+            }
+
+
+            .vertical.slider .slick-prev,
+            .vertical.slider .slick-next {
+                border-radius: 50px;
+                z-index: 1;
+              ;
+            }
+            
+
+              @media only screen and (min-width: 1280px) {
+                .vertical.slider .slick-prev {
+                      position:absolute;
+                      top: -20px!important;
+                      left: 55px!important;
+                      width: 35px;
+                      height: 35px
+
+                      
+                   }
+       
+       
+                   .vertical.slider .slick-next{
+                       position:absolute;
+                       top:491px!important;
+                       left:55px!important;
+                       width: 35px;
+                       height: 35px
+                       
+                    }
+                }
+
+                @media only screen and (min-width: 768px) and (max-width:1024px)    {
+                    .vertical.slider .slick-prev {
+                          position:absolute;
+                          top: -20px!important;
+                          left: 30px!important;
+                          
+                       }
+           
+           
+                       .vertical.slider .slick-next{
+                           position:absolute;
+                           top:491px!important;
+                           left:30px!important;
+                           
+                        }
+                    }
+
+
+                @media only screen and (min-width: 1024px) and (max-width:1366px)    {
+                    .vertical.slider .slick-prev {
+                          position:absolute;
+                          top: -20px!important;
+                          left:48px!important;
+                          
+                       }
+           
+           
+                       .vertical.slider .slick-next{
+                           position:absolute;
+                           top:491px!important;
+                           left:48px!important;
+                           
+                        }
+                    }
+
+                  
+              
+
+              .slick-dots { 
+                position: absolute;
+                bottom: 6px!important;
+                left: 6px!important;
+              }
+
+            .dropbtn {
+                background: #f6ca91;
+                padding: 4px 12px;
+                border-radius: 8px;
+                border: none;
+                cursor: pointer;
+                color: #0c5b51;
+            }
+            
+            .dropdown {
+              position: relative;
+              display: inline-block;
+            }
+            
+            .dropdown-content {
+              display: none;
+              position: absolute;
+              background-color:#fdead9e0;
+              min-width:6rem;
+              overflow: auto;
+              box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+              z-index: 1;
+            }
+            
+            .dropdown-content a {
+             padding: 0px 15px;
+              text-decoration: none;
+              display: block;
+            }
+
+            @media screen and (max-width: 1024px) {
+                .dropdown-content a{
+                    padding:0;
+                }
+              }
+              @media screen and (max-width: 600px) {
+                .dropdown-content {
+                    min-width: 100px;
+                }
+              }
+             
+           
+            
+            .show {display: block;
+            width:auto;}
+
+
+
+            #sidebar .side-nav-menu li {
+                width: 100%;
+           }
+            #sidebar .side-nav-menu li a {
+                padding: 4px 0px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                -webkit-tap-highlight-color: #000 0;
+           }
+            #sidebar .side-nav-menu li i {
+                float: right;
+                transform: rotate(-90deg);
+           }
+            .show-sub-category, .show-sub-sub-category {
+                display: none;
+                transition: 0.6s;
+           }
+            ul ul {
+                list-style-type: circle;
+           }
+            .sidebar-overlay {
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                background: #e9dccb 26;
+                z-index: 99;
+                height: 100%;
+                backdrop-filter: blur(3px);
+           }
+
+           .list{
+               cursor:pointer;
+           }
+
+           @media only screen and (max-width:540px) {
+            .list {
+               display:flex!important;
+               justify-content:space-between!important;
+            }
+          }
+        
+        @media only screen and (max-width:720px){
+            .banner{
+               display:none;
+  
+            }
+        }
+        
+      
+        .specs .choose-btn, .specs select {
+            margin-top:5px;
+        }
+    
+        .slick-slide .mini-image {
+            margin: 0 3px;
+            padding: 10px;
+            background-color: #f3debf;
+            border-radius: 0.25rem !important
+        }
+
+        .slick-slide .mini-image:hover {
+            background-color: #f6ca91;  
+        }
+          
+
+        @media only screen and (max-width:768px){
+            .footer1{
+              font-size:12px!important;
+  
+            }
+        }
+
+
+        .category-section {
+            margin: 2px 6px;
+            
+        }
+
+        @media only screen and (min-width:768px){
+            .shopByCategory .slick-track{
+                margin:auto 8px!important;
+            }
+    
+        }
+        @media only screen and (min-width:1024px){
+            .shopByCategory .slick-track{
+                margin:auto 0!important;
+            }
+    
+        }
+
+
+        @media only screen and (min-width:1200px){  
+        .shopByCategory .slick-track {
+              display:flex;
+            justify-content:center;
+            }
+        }
+
+        @media only screen and (max-width:768px){
+            .shopByCategory .slick-track{
+                margin:auto 12px!important;
+            }
+    
+        }
+
+
+ 
+       
+        @media only screen and (max-width:375px){
+            .shopByCategory .slick-track{
+                margin:auto 7px!important;
+            }
+    
+        }
+
+         
+        @media only screen and (max-width:414px){
+            .shopByCategory .slick-track{
+                margin:auto 40px!important;
+            }
+    
+        }
+     
+     
+           
+
+        @media only screen and (max-width:375px){
+            .shopByCategory .slick-track{
+                margin:auto 20px!important;
+            }
+    
+        }
+
+
+        @media only screen and (max-width:320px){
+            .shopByCategory .slick-track{
+                margin:auto 8px!important;
+            }
+    
+        }
+    
+
+       
+        .shopByCategory .parveen .slick-list .slick-track{
+            width:0!important;
+        }
+
+        .hide{
+            display: none;
+        }
+        
+        @media screen and (max-width:767px){
+        
+            .hide{
+                    display: block;
+            }
+       
+        }
+
+           
+
+
+            .fb-arrow {
+                position: absolute;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                top: 50%;
+                height:30px;
+                width: 30px;
+                border-radius: 50px;
+                background-color: #0c5b51;
+                -webkit-backdrop-filter: blur(5px);
+                backdrop-filter: blur(5px);
+               
+            }
+
+            .fa-chevron-left:before{
+                margin: -2px;
+            }
+
+            .product{
+                margin: 0 3px;
+                padding: 10px;
+                background-color: #f3debf;
+                position: relative;
+                cursor:pointer;
+            }
+
+            .product:hover{
+                background:#f6ca91;
+                  
+            }
+            .demo-area{
+                background:$color_invert_fg;
+                border-radius:8px;
+                padding:20px;
+                section{
+                  padding-top:0;
+                }
+              }
+              
+              .demo-trigger {
+                display: inline-block;
+                width: 30%;
+                float: left;
+              }
+              
+              .detail {
+                position: relative;
+                width: 100%;
+                height:80%;
+                margin-left: 5%;
+                float: left;
+                button{
+                  vertical-align:middle;
+                  opacity:.5;
+                  cursor:unset;
+                  background:$color_invert_chrome_tint;
+                  margin-left:1em;
+                }
+              }
+              
+              .SUBSCRIBE:hover {
+                color: #fff;
+                background-color: #0b5ed7;
+                border-color: #0a58ca;
+        }
+              @media (max-width: 610px) {
+              
+                .detail, .demo-trigger {
+                  float: none;
+                }
+              
+                .demo-trigger {
+                  display:block;
+                  width: 50%;
+                  margin: 0 auto;
+                }
+              
+                .detail {
+                  margin: 0;
+                  width: auto;
+                }
+              
+                
+                .responsive-hint {
+                  display: none;
+                }
+              
+
+
+                .ml6 {
+                    position: relative;
+                    font-weight: 900;
+                    font-size: 3.3em;
+                  }
+                  
+                  .ml6 .text-wrapper {
+                    position: relative;
+                    display: inline-block;
+                    padding-top: 0.2em;
+                    padding-right: 0.05em;
+                    padding-bottom: 0.1em;
+                    overflow: hidden;
+                  }
+                  
+                  .ml6 .letter {
+                    display: inline-block;
+                    line-height: 1em;
+                  }
+
+
+                  .form-select {
+                    border: 1px solid #f6ca91!important; 
+                }
+
+             
+
+                .form-select:focus {
+                    border-color: #f6ca91;
+                    outline: 0;
+                    box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+                }
+
+                .buy{
+                    margin-bottom: -0.5rem !important;
+                }
+
+                
+                    
+
+
+            </style>
+        </head>
+<body>
+    <!-- navbar -->
+    <section class="header-2">
+        <div class="logobar py-2" style="background-color: #ffead985;">
+            <div class="container-fluid d-flex align-items-center justify-content-between">
+                <a class="navbar-brand py-0" href="/">
+                    <!-- <img src="./img/new-temp/logo.png" class="" style="width: 80px;padding: 2px;" alt=""> -->
+                    <img src="{% static 'assets/img/new-temp/logo.png' %}" class="" style="width: 80px;padding: 2px;" alt="">
+                </a>
+                <div class="position-relative d-none d-sm-block d-md-block d-block">
+                    <form action="catalogue/product-search/" method="get">
+                        {% csrf_token %}
+                        <i class="fal fa-search search-global"></i> <input type="search"
+                            placeholder="search products here.."
+                            name="search-product"
+                            id="search-product" 
+                            style="width: calc(100vw - 55vw);padding: 12px;border-radius: 8px;"
+                            class="form-control border-0 py-2 py-sm-2 py-md-2 ps-5" onkeyup="productSearch(this.value)" />
+                    </form>
+                </div>
+                <ul class="d-flex list-unstyled mb-0" id="result">
+                
+                    <a href="#">
+                        <li style="background: #f6ca91;padding: 4px 12px;border-radius: 8px;" class="mx-2"><i
+                                class="fal fa-shopping-bag me-md-2"> 1 </i><span
+                                class="d-none d-sm-none d-md-inline-block">Items</span></li>
+                    </a>
+                    {% comment %} {% if request.user.id %}
+                    <a href="/customer/registration/">
+                        <li style="background: #f6ca91;padding: 4px 12px;border-radius: 8px;" class="mx-2"><i
+                                class="fal fa-user me-md-2"> </i><span
+                                class="d-none d-sm-none d-md-inline-block">{{ request.user.first_name }}</span></li>
+                    </a> {% endcomment %}
+                    
+                    {% if request.user.id %}
+                    
+                  <div class="dropdown">
+                      <button onclick="myFunction()" class="dropbtn"><i
+                        class="fal fa-user me-md-2"></i> {{ request.user.first_name }} </button>
+                    <div id="myDropdown" class="dropdown-content container-fluid p-2">
+                        <a href=""> 
+                            <li style="padding: 1px 12px; width:max-content;" >  
+                                <span class="">Orders</span>
+                            </li> 
+                        </a>
+                            <a href="">   
+                                <li style="padding: 4px 12px;width:max-content;" >
+                                    <span class="">Wish List</span></li> 
+                                </a>
+                                <a href="">   
+                                    <li style="padding: 4px 12px; width:max-content;" >
+                                        <span class="">Coupons</span></li> 
+                                    </a>
+                    
+                             <a href="/customer/logout/"> 
+                              <li style="padding: 4px 12px; width:max-content;" >
+                                      <span class="">SignOut</span></li>  
+                               </a>
+                        {% else %}
+                        <a href="/customer/login/">
+                            <li style="background: #f6ca91;padding: 4px 12px;border-radius: 8px;" class="mx-2"><i
+                                    class="fal fa fa-sign-in me-md-2"> </i><span
+                                    class=""> SignIn</span></li>
+                        </a>
+                        {% endif %}
+                       </ul>
+                  
+                    </div>
+                 
+                
+                
+                
+                </div>
+
+            </div>
+        </div>
+           
+       
+        <nav class="navbar2">
+          
+            <div class="d-none d-sm-none  d-md-block d-lg-block">
+                
+                <ul class="list-unstyled mx-auto mb-0 d-flex justify-content-center">
+                    {% for category_data in category_queryset %}
+                    <li class="nav-link dropdown">
+                        <a href="/product_list/{{ category_data.id }}">{{ category_data.category_name }}</a>
+                        {% endfor %}
+                        
+                        {% comment %} <div class="dropdown-menu">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <ul class="list-unstyled ms-0 ">
+                                        <li class="head-o-dropdown">Name of the category</li>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3">
+                                    <ul class="list-unstyled ms-0 ">
+                                        <li class="head-o-dropdown">Name of the category</li>
+                                        <a href="">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3">
+                                    <ul class="list-unstyled ms-0 ">
+                                        <li class="head-o-dropdown">Name of the category</li>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3">
+                                    <ul class="list-unstyled ms-0 ">
+                                        <li class="head-o-dropdown">Name of the category</li>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> {% endcomment %}
+                    {% comment %} </li>
+                    <li class="nav-link  dropdown"><a href="/category-list/">Kitchen & Dinning</a> {% endcomment %}
+                        {% comment %} <div class="dropdown-menu">
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <ul class="list-unstyled ms-0 ">
+                                        <li class="head-o-dropdown">Name of the category</li>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <!-- <div class="col-lg-3">
+                                    <ul class="list-unstyled ms-0 ">
+                                        <li class="head-o-dropdown">Name of the category</li>
+                                        <a href="#"><li class="text-transform-capitalise">asasd kyio iuyiuy</li></a>
+                                        <a href="#"><li class="text-transform-capitalise">asasd kyio iuyiuy</li></a>
+                                        <a href="#"><li class="text-transform-capitalise">asasd kyio iuyiuy</li></a>
+                                    </ul>
+                                </div> -->
+                                <div class="col-lg-3">
+                                    <ul class="list-unstyled ms-0 ">
+                                        <li class="head-o-dropdown">Name of the category</li>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                        <a href="#">
+                                            <li class="text-transform-capitalise">asasd kyio iuyiuy</li>
+                                        </a>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-3">
+                                    <img src="https://s7d5.scene7.com/is/image/Anthropologie/64082050_060_b?$an-category$&fit=constrain&fmt=webp&hei=523&qlt=80&wid=349"
+                                        alt="" class="w-100">
+                                </div>
+                            </div>
+                        </div> {% endcomment %}
+                    {% comment %} </li>
+                    <li class="nav-link"><a href="/category-list/">Storage & Organizer</a></li>
+                    <li class="nav-link"><a href="/category-list/">Bath</a></li>
+                    <li class="nav-link"><a href="/category-list/">Furniture</a></li>
+                    <li class="nav-link"><a href="/category-list/">Lighting</a></li>
+                    <li class="nav-link"><a href="/category-list/">Clothing</a></li>
+                    <li class="nav-link"><a href="/category-list/">Sale</a></li> {% endcomment %}
+                </ul>
+               
+            </div>
+            
+        </nav>
+    </section>
+    
+    <!-- navbar -->
+    {% block body %} {% endblock body%}
+    <!-- products listing ends -->
+                <!-- footer start -->
+             <div style="background-color:#f3debf;padding: 35px 0;" class="mt-5 ">
+                 <div class="container-fluid">
+                     <div class="row">
+                        <div class="col-md-6 offset-md-3 text-center my-2 ">
+                            <span class="f-section-head" style="font-weight: 500;">Sign up to our newsletter </span><br>
+                            <div class="d-flex justify-content-center my-3" style="position:relative;">
+                                <input type="search" placeholder="Enter your email address" class="form-control border-0 w-100" style="border-radius:40px;box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;height:40px;">
+                                <button class="btn btn-primary SUBSCRIBE" style="border: 0; border-radius:40px;position:absolute;top:0;right:0;box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;background-color: #b46624;height:40px;padding:0 18px;">SUBSCRIBE</button>
+                            </div>
+                        </div>
+
+                     </div>
+                 </div>
+                </div>
+
+
+
+                <div class="pb-0">
+                    <footer class="footer-2 p-4 py-5">
+                        <div class="container-fluid">
+                        <div class="row">
+                      <div class="col-lg-6 col-6">
+                    </div>
+                </div>
+                <div class="row py-4">
+               
+                <div class="col-lg-3 col-md-6 mb-4 col-6">
+                    <img src="{% static 'assets/img/new-temp/logo.png' %}" width="120" height="" alt="" class="">
+                    <ul class="ps-0 list-unstyled mt-3">
+                        <li>
+                            <a href=""><i class="fal fa-map-marker-alt"></i> Store Location</a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fal fa-envelope"></i> Get Email</a>
+                        </li>
+                    </ul>
+                    <address>
+                    </address>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 col-6">
+                    <ul class="pl-0 mb-3 list-unstyled">
+                        {% comment %} <li class="f-section-head">Popular Products</li> {% endcomment %}
+                        <li class="f-section-head">Pages</li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about-us/">About</a></li>
+                        <li><a href="/contact-us/">Contact Us</a></li>
+                        <li><a href="/support/">Support</a></li>
+                        <li><a href="/cookie-policy/">Cookie Policy</a></li>
+                        <li><a href="/terms-conditions/">Terms & Conditions</a></li>
+                        <li><a href="/replacement-policy/">Return and Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4 col-6">
+                    <ul class="pl-0 mb-3 list-unstyled">
+                        <li class="f-section-head">Popular Products</li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                {% comment %} <div class="col col-md col-lg">
+                    <ul class="pl-0 mb-3 list-unstyled">
+                        <li class="f-section-head">Popular Products</li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                    <ul class="pl-0 mb-0 list-unstyled">
+                        <li class="f-section-head">Deals of the day</li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>  {% endcomment %}
+                <div class="col-lg-3 col-md-6 col-6 mb-4">
+                    <ul class="list-unstyled">
+                        <li class="f-section-head">Popular Products</li>
+                       
+                        <a href="#">
+                            <li class=""><i class="fab mb-2  fa-facebook-f" style="width: 1rem; font-size: 1rem;"></i>
+                                @reander</li>
+                        </a>
+                        <a href="#">
+                            <li><i class=" mb-2 fab fa-instagram" style="width: 1rem; font-size: 1rem;"></i> @reander
+                            </li>
+                        </a>
+                        <a href="#">
+                            <li><i class=" mb-2 fab fa-twitter" style="width: 1rem; font-size: 1rem;"></i> @reander</li>
+                        </a>
+                    </ul>
+
+                   
+                </div>
+
+             
+            </div>
+        </div>
+        </footer>
+    </div>
+   
+    <div class="py-1 d-flex justify-content-between px-2 footer1" style="background:#e7b575;">
+        <small>www.reander.com</small>
+        <small class="mb-0 font-small text-center">
+            &copy; 2021 All rights reserved. <a href="#" class="footer1">Loop Methods Pvt. Ltd </a>
+        </small>
+    </div>
+
+    <!-- footer ends -->
+
+    
+    <script>
+       
+        function myFunction() {
+          document.getElementById("myDropdown").classList.toggle("show");
+        }
+        
+        window.onclick = function(event) {
+          if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+              }
+            }
+          }
+        }
+        </script>
+     
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script>
+        function showChildCategory() {
+            document.getElementsByClassName('show-sub-category')[0].style.display = "block"
+        }
+        function showSubChildCategory() {
+            document.getElementsByClassName('show-sub-sub-category')[0].style.display = "block"
+
+        }
+        function sidebarOverlay() {
+            document.getElementById('sidebar').style.transition = "fade"
+            document.getElementById('sidebar').style.display = "none"
+        }
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.carousel-slick-slider').slick({
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                arrows: true,
+                dots: true,
+                autoplay: true,
+                prevArrow: $(".go-b"),
+                nextArrow: $(".go-f"),
+            });
+            $('.category-slick-slider').slick({
+                infinite: true,
+                speed: 300,
+                slidesToShow: 8,
+                slidesToScroll: 8,
+                prevArrow: $(".go-b1"),
+                nextArrow: $(".go-f1"),
+            });
+            $('.product-slick-slider').slick({
+                infinite: false,
+                speed: 300,
+                slidesToShow: 6,
+                slidesToScroll: 4,
+                prevArrow: $(".go-b2"),
+                nextArrow: $(".go-f2"),
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+
+            });
+
+        });
+        $(".product-section").on({
+            mouseover: function () {
+                $(this).find("img:nth-child(1)").stop().animate({ opacity: 0 }, 600);
+                $(this).find("img:nth-child(2)").stop().animate({ opacity: 1 }, 600);
+            }, mouseout: function () {
+                $(this).find("img:nth-child(1)").stop().animate({ opacity: 1 }, 600);
+                $(this).find("img:nth-child(2)").stop().animate({ opacity: 0 }, 600);
+            }
+        });
+    </script>
+
+    <script>
+
+            function productSearch(val) {
+                res = document.getElementById("result");
+                res.innerHTML = '';
+                if (val == '') {
+                    return;
+                }
+                let list = '';
+                $.ajax({
+                    url: '/catalogue/product-search?searchTerm=' + val,
+                    type: 'get',
+                    success: function (data) {
+                        for (i = 0; i < data.length; i++) {
+                            list += '<li class="my-2 text-start text-white pb-2 w-50" style="font-size: 1.5rem;"><a href="/product_description/' +
+                                data[i].id + '">' + data[i].product_name + '</a></li>';
+                        }
+                        res.innerHTML = '<li>' + list + '</li>';
+                        return true;
+                    },
+                    error: function (data) {
+                    }
+                });
+            }
+
+    </script>
+
+<script src="https://awik.io/demo/webshop-zoom/Drift.min.js"></script>
+
+    <script>   
+        });
+        new Drift(document.querySelector('.drift-demo-trigger'), {
+            paneContainer: document.querySelector('.details'),
+            inlinePane: 769,
+            inlineOffsetY: -85,
+            containInline: true,
+            hoverBoundingBox: true
+            
+          });
+    </script>
+</body>
+
+</html>

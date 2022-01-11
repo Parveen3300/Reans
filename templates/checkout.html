@@ -1,0 +1,614 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block body %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link href="" rel="stylesheet">
+    <title>Title of website</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link href="https://kit-pro.fontawesome.com/releases/v5.15.4/css/pro.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/custom-css1.css">
+    <!-- seo tags -->
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:site_name" content="name of website">
+    <!-- thumbnail of shared website-->
+    <meta property='og:title' content='TITLE OF YOUR WEBSITE' />
+    <meta property='og:image' content='https://YOUR_THUMBNAIL_IMAGE_URL' />
+    <meta property='og:description' content='DESCRIPTION OF YOUR SITE' />
+    <meta property='og:url' content='URL OF YOUR WEBSITE' />
+    <meta property='og:image:width' content='1200' />
+    <meta property='og:image:height' content='627' />
+    <meta property="og:type" content='website' />
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="https://miro.medium.com/fit/c/152/152/1*sHhtYhaCe2Uc3IU0IgKwIQ.png">
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <style>
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .step-button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background-color: #d3d3d3;
+            color: #0d5c51;
+            transition: .4s;
+        }
+
+        .step-button[aria-expanded="true"] {
+            width: 40px;
+            height: 40px;
+            background-color: #0d5c51;
+            color: #ffead9;
+        }
+
+        .done {
+            background-color: #0d5c51;
+            color: #ffead9;
+        }
+
+        .step-item {
+            z-index: 10;
+            text-align: center;
+        }
+
+        #progress {
+            -webkit-appearance: none;
+            position: absolute;
+            width: 95%;
+            z-index: 5;
+            height: 2px;
+            margin-left: 18px;
+            margin-bottom: 18px;
+        }
+
+        /* to customize progress bar */
+        #progress::-webkit-progress-value {
+            background-color: #0d5c51;
+            transition: .5s ease;
+        }
+
+        #progress::-webkit-progress-bar {
+            background-color: #e3cebd;
+
+        }
+
+        .form-check-input:checked[type="checkbox"] .billing-shipping-address {
+            display: none;
+        }
+    </style>
+
+<body>
+    <!-- navbar -->
+
+    <!-- navbar -->
+
+
+    <!-- breadcrum area start -->
+    <section class="container-fluid pb-0">
+        <div class="py-0 breadcrum-area">
+            <ul class="list-unstyled ps-0 mb-0 d-flex justify-content-center">
+                <li class="mx-2"> <a href="#">Home</a></li>
+                <li class="mx-2"> <a href="#">Category</a></li>
+                <li class="mx-2"> <a href="#">subcategory</a></li>
+                <li class="mx-2"> <a href="#">Product name</a></li>
+            </ul>
+        </div>
+    </section>
+    <!-- breadcrum area ends -->
+
+
+    <section class="container-fluid">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="accordion" id="accordionExample">
+                    <div class="steps">
+                        <progress id="progress" value=0 max=100></progress>
+                        <div class="step-item">
+                            <button class="step-button text-center" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#accountDetails" aria-expanded="true" aria-controls="accountDetails">
+                                <i class="fal fa-file-user"></i>
+                            </button>
+                            <div class="step-title">
+                                Account
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#addressDetails" aria-expanded="false" aria-controls="addressDetails">
+                                <i class="fal fa-truck"></i>
+                            </button>
+                            <div class="step-title">
+                                Shipping
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <button class="step-button text-center collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <i class="fal fa-credit-card"></i>
+                            </button>
+                            <div class="step-title">
+                                Payment
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card order-process">
+                        <div id="headingOne">
+                        </div>
+                        <div id="accountDetails" class="collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="p-0">
+                                <h4 class="mb-3">Enter user details</h4>
+                                <form method="post">
+                                    {% csrf_token %} 
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">First Name</label>
+                                            <input type="text" class="form-control" id=""
+                                                placeholder="Enter your first name" value="{{request.user.first_name}}" disabled="disabled" />
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">Last Name</label>
+                                            <input type="text" class="form-control" id=""
+                                                placeholder="Enter your last name" value={{request.user.last_name}} disabled="disabled" />
+                                        </div>
+                                        {% if request.user %} 
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">Email/Contact Number</label>
+                                            <input type="email" class="form-control" id=""
+                                                placeholder="Enter your email" value="{{request.user.username}}" disabled="disabled" />
+                                        </div>
+                                        {% endif %} 
+                                        
+                                        {% comment %} <div class="col-md-6">
+                                            <label for="" class="form-label">Email/Contact Number</label>
+                                            <input type="number" class="form-control" id=""
+                                                placeholder="Enter your email" value="{{request.user.email}}">
+                                        </div>  {% endcomment %}
+                                       
+                                        <hr class="mt-3">
+                                        <h4 class="mb-3">Enter Billing Address Details</h4>
+
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">Country</label>
+                                
+                                            <select name="country" id="" class="form-select">
+                                                <option selected>Select Country</option>
+                                                {% for country in country %}
+                                                <option value="{{country.id}}">{{country.country}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">State</label>
+                                            <select id="" name="state" class="form-select">
+                                                <option selected name="state">Select State</option>
+                                                {% for state in state %}
+                                                <option value="{{state.id}}" >{{state.state}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for=""  class="form-label">City</label>
+                                            <input type="text" class="form-control" id="" name="city" 
+                                                placeholder="Enter City Name">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">Zip Code</label>
+                                            <input type="number" class="form-control" id=""
+                                                placeholder="Enter Zipcode" name="postcode">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="" class="form-label">Address</label>
+                                            <textarea id="" cols="30" rows="3" class="form-control"
+                                                placeholder="Enter your address" name="line1"></textarea>
+                                        </div>
+                                        <div class="col-md-12 mb-4">
+                                            <div class="form-check " onclick="sameAsShippingAddress()">
+                                                <input class="form-check-input " type="checkbox" name="line1"
+                                                    id="billingShippingAddress">
+                                                <label class="form-check-label" for="billingShippingAddress">
+                                                    Please tick the box if your Billing address is same as Shipping
+                                                    address
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row billing-shipping-address">
+                                        <hr class="mt-3">
+                                        <h4 class="mb-3">Enter Shipping Address Details</h4>
+
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">Country</label>
+                                            <select id="" class="form-select">
+                                                <option selected>Select Country</option>
+                                                {% for country in country %}
+                                                <option value="{{country.id}}">{{country.country}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">State</label>
+                                            <select id="" class="form-select">
+                                                <option selected>Select State</option>
+                                                  {% for state in state %}
+                                                <option value="{{state.id}}">{{state.state}}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">City</label>
+                                            <input type="password" class="form-control" id=""
+                                                placeholder="Enter City Name">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="" class="form-label">Zip Code</label>
+                                            <input type="password" class="form-control" id=""
+                                                placeholder="Enter Zipcode">
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="" class="form-label">Address</label>
+                                            <textarea name="" id="" cols="30" rows="3" class="form-control"
+                                                placeholder="Enter your address"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="">
+                                        <button class="auth-btn text-white" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card order-process">
+                        <div id="headingTwo">
+                        </div>
+                        <div id="addressDetails" class="collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="p-0">
+                                <h4 class="mb-3">Shipping Details
+                                    <a href=""><span class="position-absolute checkout-delete checkout-item-delete"><i
+                                                class="fal fa-edit"></i> Edit</span></a>
+                                </h4>
+                       
+                                    <div class="col-md-12">
+                                        <label for="" class="form-label">Contact Person</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-text">@</div> -->
+                                            <input type="text" class="form-control" id="" value="Vikas Rastogi"
+                                                disabled>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="" class="form-label">Contact Number</label>
+                                        <input type="text" class="form-control" id="" value="98986896481" disabled>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="" class="form-label">Shipping Address</label>
+                                        <textarea name="" id="" cols="30" rows="3" class="form-control"></textarea>
+                                    </div>
+
+                                    <label for=""></label>
+                                    <div class="">
+                                        <button class="auth-btn text-white" type="submit">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card order-process">
+                        <div id="headingThree">
+
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="p-0">
+                                <h4>Choose A Payment Method</h4>
+                         
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="method" id="online">
+                                        <label class="form-check-label" for="method1">
+                                            Internet Banking
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="method" id="method2" checked>
+                                        <label class="form-check-label" for="method2">
+                                            Credit Card
+                                        </label>
+                                        <div class="row card-number-details ">
+
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control" id=""
+                                                    placeholder="Card Number">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" id=""
+                                                    placeholder="Name on card">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <select id="" class="form-select">
+                                                    <option selected="">Month</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <select id="" class="form-select">
+                                                    <option selected="">Year</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="method" id="card" checked>
+                                        <label class="form-check-label" for="method3">
+                                            Debit Card
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="method" id="cod" checked>
+                                        <label class="form-check-label" for="method4">
+                                            Pay On Delivery
+                                        </label> <br>
+                                        <span style="font-size: 85%;">
+                                            Pay digitally with other methods. Cash may not be
+                                            accepted in COVID
+                                            restricted areas</span>
+                                    </div>
+                                    
+                                    <div class="mt-5">
+                           
+                                        <a href="/order/create_order/"><button class="auth-btn text-white">Place order</button></a>
+                                        
+                                        <!-- <button class="auth-btn text-white" id="pay-btn">Place order</button> -->
+
+                                    </div>
+
+                              
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 position-relative">
+                <div class="c-devider"></div>
+            </div>
+            <div class="col-md-4">
+                <h5 class="mb-4 mt-4">Order Summery <a href=""><span
+                            class="checkout-delete checkout-item-delete float-end"><i class="fal fa-edit"></i>
+                            Edit</span></a></h5>
+                {% for product in basket_products %}         
+                <div class="d-flex position-relative checkout-items">
+                    <img src="{{product.product.image_1.url}}"
+                        alt="" class="rounded" style="width: 75px;">
+                    <div class="ms-2">
+                        <h6 class="mb-1">{{product.product.product_name}}</h6>
+                        <p class="mb-1">3 items</p>
+                        <h5 class="mb-1">₹ {{product.product.price}}</h5>
+                    </div>
+                    <a href="/basket/remove-product/{{product.product.id}}">"<span class="position-absolute checkout-delete checkout-item-delete"> <i
+                            class="far fa-trash-alt"></i></span></a>
+                </div>
+                {% endfor %}
+                {% comment %} <div class="d-flex position-relative checkout-items">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw0LKHWb_urLmfrqk6_Y0ORRUfE7kbPE29mnZ7SRmxSWWY8V2xgeTewhkQRYgUH4LpwI4&usqp=CAU"
+                        alt="" class="rounded" style="width: 75px;">
+                    <div class="ms-2">
+                        <h6 class="mb-1">Name of the product</h6>
+                        <p class="mb-1">3 items</p>
+                        <h5 class="mb-1">$456</h5>
+                    </div>
+                    <span class="position-absolute checkout-delete checkout-item-delete"> <i
+                            class="far fa-trash-alt"></i></span>
+                </div>
+                <div class="d-flex position-relative checkout-items">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw0LKHWb_urLmfrqk6_Y0ORRUfE7kbPE29mnZ7SRmxSWWY8V2xgeTewhkQRYgUH4LpwI4&usqp=CAU"
+                        alt="" class="rounded" style="width: 75px;">
+                    <div class="ms-2">
+                        <h6 class="mb-1">Name of the product</h6>
+                        <p class="mb-1">3 items</p>
+                        <h5 class="mb-1">$456</h5>
+                    </div>
+                    <span class="position-absolute checkout-delete checkout-item-delete"> <i
+                            class="far fa-trash-alt"></i></span>
+                </div> {% endcomment %}
+                <hr>
+                <div class="cart-card">
+                    <table class="w-100">
+                        <tbody>
+                            <tr>
+                                <td>Item(s) </td>
+                                <td class="text-end">6</td>
+                            </tr>
+                            <tr>
+                                <td>Subtotal</td>
+                                <td class="text-end">$2,690.00</td>
+                            </tr>
+                            <tr>
+                                <td>Coupon (Diwali 200)</td>
+                                <td class="text-end">- $200.00</td>
+                            </tr>
+                            <tr>
+                                <td>Estimated Tax</td>
+                                <td class="text-end">$10.00</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <h4>Total</h4>
+                                </td>
+                                <td class="text-end">
+                                    <h4>$2,690.00</h4>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="py-5">
+
+    </div>
+
+    <!-- footer start -->
+    <!-- footer ends -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/popper.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.carousel-slick-slider').slick({
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                arrows: true,
+                dots: true,
+                autoplay: true,
+                prevArrow: $(".go-b"),
+                nextArrow: $(".go-f"),
+            });
+            $('.category-slick-slider').slick({
+                infinite: true,
+                speed: 300,
+                slidesToShow: 8,
+                slidesToScroll: 8,
+                prevArrow: $(".go-b1"),
+                nextArrow: $(".go-f1"),
+            });
+            $('.product-slick-slider').slick({
+                infinite: false,
+                speed: 300,
+                slidesToShow: 6,
+                slidesToScroll: 4,
+                prevArrow: $(".go-b2"),
+                nextArrow: $(".go-f2"),
+                Vertical: true,
+                verticalSwiping: true,
+            });
+            $(".vertical,.horizontal").slick({
+                infinite: false,
+                dots: false,
+                speed: 300,
+                vertical: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                responsive: [{
+                    breakpoint: 768,
+                    settings: {
+                        vertical: false
+                    }
+                }]
+
+            });
+        });
+        $(".product-section").on({
+            mouseover: function () {
+                $(this).find("img:nth-child(1)").stop().animate({ opacity: 0 }, 600);
+                $(this).find("img:nth-child(2)").stop().animate({ opacity: 1 }, 600);
+            }, mouseout: function () {
+                $(this).find("img:nth-child(1)").stop().animate({ opacity: 1 }, 600);
+                $(this).find("img:nth-child(2)").stop().animate({ opacity: 0 }, 600);
+            }
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(".mini-image").click(function () {
+                $(".mini-image").removeClass("active");
+                $(this).addClass("active");
+                let imageNo = this.attributes[1].nodeValue.substr(-1) - 1
+                let noOfImages = $('.full-image').length
+                $('.full-image')[imageNo].className = $('.full-image')[imageNo].className.replace(" ", " active ")
+
+            });
+        });
+    </script>
+    <script>
+        const stepButtons = document.querySelectorAll('.step-button');
+        const progress = document.querySelector('#progress');
+
+        Array.from(stepButtons).forEach((button, index) => {
+            button.addEventListener('click', () => {
+                progress.setAttribute('value', index * 100 / (stepButtons.length - 1));//there are 3 buttons. 2 spaces.
+
+                stepButtons.forEach((item, secindex) => {
+                    if (index > secindex) {
+                        item.classList.add('done');
+                    }
+                    if (index < secindex) {
+                        item.classList.remove('done');
+                    }
+                })
+            })
+        })
+    </script>
+    <!-- billing-shipping address script -->
+
+
+    <script>
+        $('#billingShippingAddress').change(function () {
+            var c = this.checked ? 'none' : 'inline-flex';
+            $('.billing-shipping-address').css('display', c)
+        })
+    </script>
+
+    <!-- Razorpay's Javascript code. -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script>
+    var options = {
+       
+      // Enter the Key ID generated from the Dashboard
+      key: "{{ razorpay_merchant_key }}",
+       
+      // Amount is in currency subunits.
+      // Default currency is INR. Hence,
+      // 50000 refers to 50000 paise
+      amount: "{{ razorpay_amount }}",
+      currency: "{{ currency}}",
+       
+      // Your/store name.
+      name: "Reans Creations",
+       
+      // Pass the `id` obtained in the response of Step 1
+      order_id: "{{ razorpay_order_id }}",
+      callback_url: "{{ callback_url }}",
+    };
+     
+    // initialise razorpay with the options.
+    var rzp1 = new Razorpay(options);
+     
+    // add event listener to the payment button.
+    document.getElementById("pay-btn").onclick = function (e) {
+      rzp1.open();
+      e.preventDefault();
+    };
+  </script>
+
+</body>
+
+    {% endblock body %}
+
+
+</html>
